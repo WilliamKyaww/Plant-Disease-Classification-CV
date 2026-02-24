@@ -146,21 +146,10 @@ def load_model(model, path: str, device: str = "cpu"):
     return model
 
 
+# Monte Carlo Dropout: run multiple forward passes with dropout enabled to estimate uncertainty
 @torch.no_grad()
 def mc_dropout_predict(model, inputs, n_forward: int = 30):
-    """
-    Monte Carlo Dropout: run multiple forward passes with dropout enabled
-    to estimate uncertainty.
-
-    Args:
-        model: Model (must have dropout layers).
-        inputs: Input tensor (batch).
-        n_forward: Number of stochastic forward passes.
-
-    Returns:
-        mean_probs: Mean predicted probabilities (batch x num_classes).
-        std_probs: Std of predicted probabilities (batch x num_classes).
-    """
+    
     model.train()  # Enable dropout
 
     all_probs = []

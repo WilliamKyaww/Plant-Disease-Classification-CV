@@ -77,12 +77,7 @@ def create_dataloaders(train_csv: str, val_csv: str, test_csv: str,
                        label_column: str = "label",
                        batch_size: int = 32, num_workers: int = 0,
                        root_dir: str = None):
-    """
-    Create train, validation, and test DataLoaders from CSV files.
-
-    Returns:
-        Tuple of (train_loader, val_loader, test_loader)
-    """
+   
     from torch.utils.data import DataLoader
 
     train_ds = PlantDiseaseDataset(train_csv, label_column, train_transform, root_dir)
