@@ -42,6 +42,16 @@ class PlantDiseaseDataset(Dataset):
         # Prepend root directory if provided
         if self.root_dir:
             img_path = os.path.join(self.root_dir, img_path)
+        else:
+            
+            # Paths work on both local and Colab automatically
+            if img_path.startswith("Datasets/") or img_path.startswith("Datasets\\"):
+                try:
+                    from src.utils import DATASETS_DIR
+                except ImportError:
+                    from .utils import DATASETS_DIR
+                relative = img_path.split("/", 1)[1] if "/" in img_path else img_path.split("\\", 1)[1]
+                img_path = os.path.join(DATASETS_DIR, relative)
 
         label = int(row[self.label_column])
 

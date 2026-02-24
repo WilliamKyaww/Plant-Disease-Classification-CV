@@ -11,10 +11,23 @@ import numpy as np
 # ─── Paths ──────────────────────────────────────────────────────────
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATASETS_DIR = os.path.join(PROJECT_ROOT, "Datasets")
 CSV_DIR = os.path.join(PROJECT_ROOT, "CSV")
 MODELS_DIR = os.path.join(PROJECT_ROOT, "models")
 RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
+
+# Dataset path: auto-detect Colab, env var override, or local default
+_COLAB_DATASETS = "/content/Datasets"
+_LOCAL_DATASETS = os.path.join(PROJECT_ROOT, "Datasets")
+
+if os.environ.get("DATASETS_DIR"):
+    DATASETS_DIR = os.environ["DATASETS_DIR"]
+elif os.path.isdir(_COLAB_DATASETS):
+    DATASETS_DIR = _COLAB_DATASETS
+else:
+    DATASETS_DIR = _LOCAL_DATASETS
+
+# Google Colab?
+IS_COLAB = os.path.isdir("/content")
 
 
 # ─── Dataset folders ────────────────────────────────────────────────
