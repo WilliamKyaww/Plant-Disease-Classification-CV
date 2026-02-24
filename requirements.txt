@@ -1,15 +1,23 @@
-torch>=2.0.0
-torchvision>=0.15.0
-timm>=0.9.0
-Pillow>=10.0.0
-pandas>=2.0.0
-numpy>=1.24.0
-scikit-learn>=1.3.0
-matplotlib>=3.7.0
-seaborn>=0.12.0
-captum>=0.6.0
-tqdm>=4.65.0
-open-clip-torch>=2.20.0
-streamlit>=1.30.0
-jupyter>=1.0.0
-ipykernel>=6.0.0
+# Core ML
+torch>=2.0
+torchvision>=0.15
+timm>=0.9
+
+# Data & metrics
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+Pillow>=10.0
+
+# Visualization
+matplotlib>=3.7
+seaborn>=0.12
+
+# XAI (Phase 3)
+captum>=0.6
+
+# Progress bars
+tqdm>=4.65
+
+# Demo app (Phase 5)
+# streamlit>=1.28

@@ -1,36 +1,14 @@
-"""
-Training and evaluation functions.
-"""
-
 import time
 import copy
 import torch
 import torch.nn as nn
 from tqdm import tqdm
 
-
+# Train model with validation tracking and optional early stopping
 def train_model(model, criterion, optimizer, train_loader, val_loader,
                 num_epochs: int = 10, device: str = "cpu",
                 scheduler=None, early_stop_patience: int = 0):
-    """
-    Train a model with validation tracking and optional early stopping.
-
-    Args:
-        model: PyTorch model.
-        criterion: Loss function.
-        optimizer: Optimizer.
-        train_loader: Training DataLoader.
-        val_loader: Validation DataLoader.
-        num_epochs: Number of epochs.
-        device: 'cuda' or 'cpu'.
-        scheduler: Optional learning rate scheduler.
-        early_stop_patience: Stop if val loss doesn't improve for this many
-                             epochs. Set to 0 to disable.
-
-    Returns:
-        model: Model with best validation weights loaded.
-        history: Dict with train_loss, val_loss, train_acc, val_acc lists.
-    """
+    
     since = time.time()
 
     best_model_wts = copy.deepcopy(model.state_dict())
@@ -123,15 +101,9 @@ def train_model(model, criterion, optimizer, train_loader, val_loader,
 
 
 @torch.no_grad()
+# Evaluate model on dataset and return predictions + labels
 def evaluate_model(model, dataloader, device: str = "cpu"):
-    """
-    Evaluate model on a dataset and return predictions + labels.
 
-    Returns:
-        all_labels: List of true labels.
-        all_preds: List of predicted labels.
-        all_probs: Tensor of prediction probabilities (N x num_classes).
-    """
     model.eval()
     all_labels = []
     all_preds = []

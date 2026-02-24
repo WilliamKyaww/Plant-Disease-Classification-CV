@@ -8,11 +8,9 @@ import pandas as pd
 import torch
 from torch.utils.data import Dataset
 
-
+# General-purpose dataset for plant disease classification
 class PlantDiseaseDataset(Dataset):
     """
-    General-purpose dataset for plant disease classification.
-
     Reads a CSV with columns: image_path, crop, disease, label
     and returns (image_tensor, label) pairs.
 
@@ -25,13 +23,7 @@ class PlantDiseaseDataset(Dataset):
 
     def __init__(self, csv_file: str, label_column: str = "label",
                  transform=None, root_dir: str = None):
-        """
-        Args:
-            csv_file: Path to the CSV file.
-            label_column: Name of the column to use as the target label.
-            transform: torchvision transforms to apply to images.
-            root_dir: Optional root directory to prepend to image paths.
-        """
+
         self.df = pd.read_csv(csv_file)
         self.label_column = label_column
         self.transform = transform

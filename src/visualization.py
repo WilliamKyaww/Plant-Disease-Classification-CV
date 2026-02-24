@@ -11,15 +11,9 @@ from sklearn.metrics import (
     roc_curve, auc
 )
 
-
+# Plot training and validation loss/accuracy curves
 def plot_training_history(history: dict, save_path: str = None):
-    """
-    Plot training and validation loss/accuracy curves.
 
-    Args:
-        history: Dict with keys train_loss, val_loss, train_acc, val_acc.
-        save_path: Optional path to save the figure.
-    """
     epochs = range(1, len(history["train_loss"]) + 1)
 
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
@@ -48,18 +42,10 @@ def plot_training_history(history: dict, save_path: str = None):
         print(f"Figure saved to {save_path}")
     plt.show()
 
-
+# Plot confusion matrix heatmap
 def plot_confusion_matrix(labels, preds, class_names: list = None,
                           save_path: str = None):
-    """
-    Plot a confusion matrix heatmap.
 
-    Args:
-        labels: True labels.
-        preds: Predicted labels.
-        class_names: Optional list of class name strings.
-        save_path: Optional path to save the figure.
-    """
     cm = confusion_matrix(labels, preds)
 
     plt.figure(figsize=(8, 6))
@@ -75,23 +61,14 @@ def plot_confusion_matrix(labels, preds, class_names: list = None,
         print(f"Figure saved to {save_path}")
     plt.show()
 
-
+# Print sklearn classification report
 def print_classification_report(labels, preds, class_names: list = None):
-    """Print sklearn classification report."""
     print(classification_report(labels, preds, target_names=class_names, digits=4))
 
-
+# Plot one-vs-rest ROC curves for multi-class classification
 def plot_roc_curves(labels, probs, class_names: list = None,
                     save_path: str = None):
-    """
-    Plot one-vs-rest ROC curves for multi-class classification.
 
-    Args:
-        labels: True labels (list of ints).
-        probs: Predicted probabilities (N x num_classes tensor or array).
-        class_names: Optional list of class names.
-        save_path: Optional path to save the figure.
-    """
     if isinstance(probs, torch.Tensor):
         probs = probs.numpy()
 
@@ -122,16 +99,9 @@ def plot_roc_curves(labels, probs, class_names: list = None,
         print(f"Figure saved to {save_path}")
     plt.show()
 
-
+#  Display a grid of sample images from dataset
 def plot_sample_images(dataset, n: int = 16, class_names: list = None):
-    """
-    Display a grid of sample images from a dataset.
 
-    Args:
-        dataset: PyTorch Dataset returning (image, label).
-        n: Number of images to show.
-        class_names: Optional label name mapping.
-    """
     try:
         from src.transforms import get_inverse_normalize
     except ImportError:
