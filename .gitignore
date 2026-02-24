@@ -2,8 +2,14 @@
 # Datasets - never commit image data to git
 # ============================================================
 Datasets/
-Dataset Original/
 *.zip
+
+# ============================================================
+# Helper Scripts
+# ============================================================
+helper scripts/
+*.py
+
 
 # ============================================================
 # Generated CSV files (reproducible from notebooks)

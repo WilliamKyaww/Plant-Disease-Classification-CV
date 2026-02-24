@@ -19,17 +19,22 @@ RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
 
 # ─── Dataset folders ─────────────────────────────────────────────────────────
 
+FOLDER_METADATA = {
+    "Pepper__bell___healthy": {"crop": "bellpepper", "disease": "healthy", "label": 0, "clean_name": "Bell Pepper - Healthy"},
+    "Pepper__bell___Bacterial_spot": {"crop": "bellpepper", "disease": "bacterialspot", "label": 1, "clean_name": "Bell Pepper - Bacterial Spot"},
+    "Tomato_healthy": {"crop": "tomato", "disease": "healthy", "label": 0, "clean_name": "Tomato - Healthy"},
+    "Tomato_Early_blight": {"crop": "tomato", "disease": "earlyblight", "label": 1, "clean_name": "Tomato - Early Blight"},
+    "Tomato_Late_blight": {"crop": "tomato", "disease": "lateblight", "label": 1, "clean_name": "Tomato - Late Blight"},
+    "Potato___healthy": {"crop": "potato", "disease": "healthy", "label": 0, "clean_name": "Potato - Healthy"},
+    "Potato___Early_blight": {"crop": "potato", "disease": "earlyblight", "label": 1, "clean_name": "Potato - Early Blight"},
+    "Potato___Late_blight": {"crop": "potato", "disease": "lateblight", "label": 1, "clean_name": "Potato - Late Blight"},
+}
+
 # All crop-disease folder names in the Datasets/ directory
-ALL_FOLDERS = [
-    "BellPepper_Healthy",
-    "BellPepper_BacterialSpot",
-    "Tomato_Healthy",
-    "Tomato_EarlyBlight",
-    "Tomato_LateBlight",
-    "Potato_Healthy",
-    "Potato_EarlyBlight",
-    "Potato_LateBlight",
-]
+ALL_FOLDERS = list(FOLDER_METADATA.keys())
+
+# Mapping for pretty presentation
+CLASS_NAME_MAPPING = {k: v["clean_name"] for k, v in FOLDER_METADATA.items()}
 
 # Multi-class label mapping: disease name -> integer
 DISEASE_CLASSES = {
