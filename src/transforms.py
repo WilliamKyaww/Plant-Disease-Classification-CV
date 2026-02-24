@@ -3,7 +3,10 @@ Data augmentation and transform pipelines.
 """
 
 import torchvision.transforms as T
-from src.utils import IMAGENET_MEAN, IMAGENET_STD, IMAGE_SIZE
+try:
+    from src.utils import IMAGENET_MEAN, IMAGENET_STD, IMAGE_SIZE
+except ImportError:
+    from .utils import IMAGENET_MEAN, IMAGENET_STD, IMAGE_SIZE
 
 
 def get_train_transform(strong: bool = False):

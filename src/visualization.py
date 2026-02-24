@@ -132,7 +132,10 @@ def plot_sample_images(dataset, n: int = 16, class_names: list = None):
         n: Number of images to show.
         class_names: Optional label name mapping.
     """
-    from src.transforms import get_inverse_normalize
+    try:
+        from src.transforms import get_inverse_normalize
+    except ImportError:
+        from .transforms import get_inverse_normalize
 
     inv_normalize = get_inverse_normalize()
 
