@@ -28,10 +28,11 @@ models/*.ckpt
 *.md.resolved
 *.resolved
 
-# ============================================================
+# ===============
 # Jupyter / Python artefacts
-# ============================================================
+# ===============
 .ipynb_checkpoints/
+Google Colab/
 __pycache__/
 *.pyc
 *.pyo
