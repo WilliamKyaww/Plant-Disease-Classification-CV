@@ -7,9 +7,7 @@ Datasets/
 # ============================================================
 # Helper Scripts
 # ============================================================
-helper scripts/
-*.py
-
+helper scripts/*.py
 
 # ============================================================
 # Generated CSV files (reproducible from notebooks)
