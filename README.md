@@ -42,6 +42,12 @@ Expected class folder names are defined in `src/utils.py` under `FOLDER_METADATA
 ## Phase 1 Workflow (Executable)
 Run from `Main/`:
 
+Quick one-command runner (forces Python 3.13):
+```bash
+run_phase1.bat
+```
+
+Equivalent step-by-step commands:
 1. Integrity audit (missing/corrupt/exact duplicates/near duplicates):
 ```bash
 py -3.13 -m src.integrity
