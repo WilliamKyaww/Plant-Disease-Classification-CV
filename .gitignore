@@ -35,8 +35,7 @@ models/*.ckpt
 # Jupyter / Python artefacts
 # ===============
 .ipynb_checkpoints/
-Google Colab/*
-!Google Colab/Plant_Disease.ipynb
+Google Colab/
 __pycache__/
 *.pyc
 *.pyo

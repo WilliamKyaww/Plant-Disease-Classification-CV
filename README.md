@@ -11,16 +11,17 @@ Computer vision project for plant disease classification with reproducible train
 ```text
 Main/
   src/                         Core source modules (single source of truth)
+  notebooks/                   Notebook orchestration layer
+    01_dataset_preparation.ipynb
+    02_data_pipeline.ipynb
+    03_finetuning_resnet.ipynb
+    04_severity_labelling.ipynb  (deprecated)
+    05_severity_review.ipynb     (deprecated)
+    06_severity_small_experiment.ipynb (deprecated)
   CSV/                         Split CSV artifacts
   Datasets/                    Image folders (not tracked in git)
   models/                      Saved model checkpoints
   results/                     Logs, figures, split manifests
-  01_dataset_preparation.ipynb
-  02_data_pipeline.ipynb
-  03_finetuning_resnet.ipynb
-  04_severity_labelling.ipynb  (deprecated)
-  05_severity_review.ipynb     (deprecated)
-  06_severity_small_experiment.ipynb (deprecated)
   requirements.txt
 ```
 
@@ -91,9 +92,9 @@ Generated artifacts:
 15. `results/stability_checks/latest_stability_check.txt`
 
 ## Notebook Status
-1. `01_dataset_preparation.ipynb` calls `src.integrity` and `src.prepare_splits`.
-2. `02_data_pipeline.ipynb` validates dataloaders using `class_label`.
-3. `03_finetuning_resnet.ipynb` runs a baseline training flow using `src` modules and `ExperimentLog`.
+1. `notebooks/01_dataset_preparation.ipynb` calls `src.integrity` and `src.prepare_splits`.
+2. `notebooks/02_data_pipeline.ipynb` validates dataloaders using `class_label`.
+3. `notebooks/03_finetuning_resnet.ipynb` runs a baseline training flow using `src` modules and `ExperimentLog`.
 4. `04-06` are intentionally deprecated until the optional severity phase is unlocked.
 
 ## Colab Note
