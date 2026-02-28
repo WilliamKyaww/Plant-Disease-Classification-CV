@@ -1,4 +1,4 @@
-# Plant Disease Detection (Final Year Project)
+# Plant Disease Detection
 
 Computer vision project for plant disease classification with reproducible training/evaluation workflows.
 
