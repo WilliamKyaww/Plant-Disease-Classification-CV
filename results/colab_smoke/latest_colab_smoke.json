@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-02-28T22:05:10.570285",
+  "executed_in_colab": false,
+  "repo_main": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main",
+  "git_commit": "7062d2e10950852443e8619ca5fea5ca7acb86e3",
+  "checks": [
+    {
+      "name": "repo_main_detected",
+      "passed": true,
+      "details": "repo_main=C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main"
+    },
+    {
+      "name": "cwd_set",
+      "passed": true,
+      "details": "cwd=C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main"
+    },
+    {
+      "name": "src_folder_exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "split_csvs_exist",
+      "passed": true,
+      "details": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_train.csv, C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_val.csv, C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_test.csv"
+    },
+    {
+      "name": "src_imports_ok",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "name": "dataset_sample_load_ok",
+      "passed": true,
+      "details": ""
+    }
+  ],
+  "passed": true
+}

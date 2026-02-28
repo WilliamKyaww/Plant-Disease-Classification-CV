@@ -1,0 +1,140 @@
+{
+  "run_name": "resnet18_15class_smoke_seed42_20260228_220456",
+  "timestamp": "2026-02-28T22:05:05.907406",
+  "seed": 42,
+  "epochs": 1,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "label_column": "class_label",
+  "device": "cpu",
+  "train_samples": 127,
+  "val_samples": 64,
+  "test_samples": 64,
+  "test_accuracy": 0.09375,
+  "test_f1_macro": 0.034126984126984124,
+  "split_manifest_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\split_manifests\\latest_split_manifest.json",
+  "split_manifest_sha256": "76ac701476491b5513c0a639c591d479f135c804028dc4e3fa5c35506ce3b33b",
+  "history": {
+    "train_loss": [
+      2.7926101553158498
+    ],
+    "val_loss": [
+      3.2195929288864136
+    ],
+    "train_acc": [
+      0.14960629921259844
+    ],
+    "val_acc": [
+      0.125
+    ],
+    "lr": [
+      0.001
+    ]
+  },
+  "classification_report": {
+    "Pepper - Healthy": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "Pepper - Bacterial Spot": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "Potato - Healthy": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Potato - Early Blight": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "Potato - Late Blight": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "Tomato - Healthy": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "Tomato - Bacterial Spot": {
+      "precision": 0.10204081632653061,
+      "recall": 0.7142857142857143,
+      "f1-score": 0.17857142857142858,
+      "support": 7.0
+    },
+    "Tomato - Early Blight": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "Tomato - Late Blight": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 6.0
+    },
+    "Tomato - Leaf Mold": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "Tomato - Septoria Leaf Spot": {
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1-score": 0.3333333333333333,
+      "support": 5.0
+    },
+    "Tomato - Spider Mites": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "Tomato - Target Spot": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 4.0
+    },
+    "Tomato - Yellow Leaf Curl Virus": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 10.0
+    },
+    "Tomato - Mosaic Virus": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "accuracy": 0.09375,
+    "macro avg": {
+      "precision": 0.07346938775510203,
+      "recall": 0.06095238095238096,
+      "f1-score": 0.034126984126984124,
+      "support": 64.0
+    },
+    "weighted avg": {
+      "precision": 0.08928571428571429,
+      "recall": 0.09375,
+      "f1-score": 0.045572916666666664,
+      "support": 64.0
+    }
+  },
+  "checkpoint_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\models\\resnet18_15class_smoke_seed42_20260228_220456.pth"
+}

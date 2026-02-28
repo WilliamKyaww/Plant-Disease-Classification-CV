@@ -181,6 +181,22 @@ class ExperimentLog:
 
         self.data["artifacts"]["split_manifest"] = manifest
 
+    def set_file_artifact(self, name: str, path: str):
+        """
+        Record a single file artifact with existence, SHA256, and size metadata.
+        """
+        artifact = {
+            "path": path,
+            "exists": os.path.exists(path),
+        }
+        if artifact["exists"]:
+            artifact["sha256"] = sha256_file(path)
+            artifact["size_bytes"] = os.path.getsize(path)
+            artifact["modified_time"] = datetime.fromtimestamp(
+                os.path.getmtime(path)
+            ).isoformat()
+        self.data["artifacts"][name] = artifact
+
     def save(self, custom_dir: str = None):
         """Save experiment log as JSON."""
         out_dir = custom_dir or LOGS_DIR

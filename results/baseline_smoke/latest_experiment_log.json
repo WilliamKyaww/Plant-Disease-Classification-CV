@@ -1,0 +1,132 @@
+{
+  "name": "resnet18_15class_smoke_seed42_20260228_220456",
+  "timestamp": "2026-02-28T22:05:05.910133",
+  "hyperparams": {
+    "model": "resnet18",
+    "epochs": 1,
+    "batch_size": 32,
+    "lr": 0.001,
+    "seed": 42,
+    "label_column": "class_label",
+    "sampled_train_rows": 127,
+    "sampled_val_rows": 64,
+    "sampled_test_rows": 64
+  },
+  "metrics": {
+    "test_accuracy": 0.09375,
+    "test_f1_macro": 0.034126984126984124,
+    "test_samples": 64
+  },
+  "environment": {
+    "python_version": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\willi\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pytorch_version": "2.9.1+cpu",
+    "cuda_available": false,
+    "cuda_version": null,
+    "gpu_name": null,
+    "gpu_memory_gb": null
+  },
+  "artifacts": {
+    "split_manifest": {
+      "timestamp": "2026-02-28T22:05:06.015374",
+      "seed": 42,
+      "label_column": "class_label",
+      "git_commit": "7062d2e10950852443e8619ca5fea5ca7acb86e3",
+      "splits": {
+        "train": {
+          "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\sample_splits\\train_smoke_20260228_220456.csv",
+          "exists": true,
+          "sha256": "53001052b99f3686a8c36f2d111f16ba6e2bb008e90c08805c4abdd0fca59913",
+          "rows": 127,
+          "label_counts": {
+            "0": 9,
+            "1": 6,
+            "10": 11,
+            "11": 10,
+            "12": 9,
+            "13": 20,
+            "14": 2,
+            "2": 1,
+            "3": 6,
+            "4": 6,
+            "5": 10,
+            "6": 13,
+            "7": 6,
+            "8": 12,
+            "9": 6
+          }
+        },
+        "val": {
+          "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\sample_splits\\val_smoke_20260228_220456.csv",
+          "exists": true,
+          "sha256": "e959130aaa2e864ee9762dc0310803f497a2a16be2948fe5d37a49d15c4772eb",
+          "rows": 64,
+          "label_counts": {
+            "0": 5,
+            "1": 3,
+            "10": 5,
+            "11": 5,
+            "12": 4,
+            "13": 10,
+            "14": 1,
+            "2": 1,
+            "3": 3,
+            "4": 3,
+            "5": 5,
+            "6": 7,
+            "7": 3,
+            "8": 6,
+            "9": 3
+          }
+        },
+        "test": {
+          "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\sample_splits\\test_smoke_20260228_220456.csv",
+          "exists": true,
+          "sha256": "b89edf18a90236bde7659cb017f2933e57bfc9290e80389b0ac55093157bfdc3",
+          "rows": 64,
+          "label_counts": {
+            "0": 5,
+            "1": 3,
+            "10": 5,
+            "11": 5,
+            "12": 4,
+            "13": 10,
+            "14": 1,
+            "2": 1,
+            "3": 3,
+            "4": 3,
+            "5": 5,
+            "6": 7,
+            "7": 3,
+            "8": 6,
+            "9": 3
+          }
+        }
+      }
+    },
+    "split_manifest_file": {
+      "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\split_manifests\\latest_split_manifest.json",
+      "exists": true,
+      "sha256": "76ac701476491b5513c0a639c591d479f135c804028dc4e3fa5c35506ce3b33b",
+      "size_bytes": 2446,
+      "modified_time": "2026-02-28T22:04:47.586759"
+    },
+    "metrics_snapshot_file": {
+      "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\metrics_snapshot_resnet18_15class_smoke_seed42_20260228_220456.json",
+      "exists": true,
+      "sha256": "f997ec22e981ffc2ef2dac91c7ac4a2410213025eb63aa3c7dd3acf42aafeca2",
+      "size_bytes": 3498,
+      "modified_time": "2026-02-28T22:05:05.908018"
+    },
+    "model_checkpoint_file": {
+      "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\models\\resnet18_15class_smoke_seed42_20260228_220456.pth",
+      "exists": true,
+      "sha256": "a29d59b39bb1d33baba10f41fad731bccf739e553bb720c297af1a56021fbe76",
+      "size_bytes": 44819339,
+      "modified_time": "2026-02-28T22:05:05.905593"
+    }
+  },
+  "git_commit": "7062d2e10950852443e8619ca5fea5ca7acb86e3",
+  "notes": ""
+}

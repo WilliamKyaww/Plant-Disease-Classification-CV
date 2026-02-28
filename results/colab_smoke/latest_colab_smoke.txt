@@ -1,0 +1,16 @@
+Colab Smoke Report
+============================================================
+Timestamp: 2026-02-28T22:05:10.570285
+Executed in Colab: False
+Repo main: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main
+Git commit: 7062d2e10950852443e8619ca5fea5ca7acb86e3
+Passed: True
+
+Checks
+------------------------------------------------------------
+- [PASS] repo_main_detected: repo_main=C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main
+- [PASS] cwd_set: cwd=C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main
+- [PASS] src_folder_exists: 
+- [PASS] split_csvs_exist: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\CSV\plantvillage_train.csv, C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\CSV\plantvillage_val.csv, C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\CSV\plantvillage_test.csv
+- [PASS] src_imports_ok: 
+- [PASS] dataset_sample_load_ok: 
