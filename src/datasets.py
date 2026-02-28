@@ -16,8 +16,8 @@ class PlantDiseaseDataset(Dataset):
 
     The 'label_column' parameter controls which column is used as
     the target label, enabling reuse for:
-      - Binary classification (label_column="label")
-      - Multi-class disease classification (label_column="disease_label")
+      - Binary classification (label_column="binary_label" or "label")
+      - Multi-class disease classification (label_column="class_label")
       - Severity estimation (label_column="severity")
     """
 
@@ -43,15 +43,15 @@ class PlantDiseaseDataset(Dataset):
         if self.root_dir:
             img_path = os.path.join(self.root_dir, img_path)
         else:
-            
-            # Paths work on both local and Colab automatically
-            if img_path.startswith("Datasets/") or img_path.startswith("Datasets\\"):
+            # Paths work on both local and Colab automatically.
+            norm_path = img_path.replace("\\", "/")
+            if norm_path.lower().startswith("datasets/"):
                 try:
                     from src.utils import DATASETS_DIR
                 except ImportError:
                     from .utils import DATASETS_DIR
-                relative = img_path.split("/", 1)[1] if "/" in img_path else img_path.split("\\", 1)[1]
-                img_path = os.path.join(DATASETS_DIR, relative)
+                relative = norm_path.split("/", 1)[1]
+                img_path = os.path.join(DATASETS_DIR, *relative.split("/"))
 
         label = int(row[self.label_column])
 

@@ -4,8 +4,14 @@ Configuration constants, seed management, and path helpers.
 
 import os
 import random
-import torch
-import numpy as np
+try:
+    import numpy as np
+except ImportError:
+    np = None
+try:
+    import torch
+except ImportError:
+    torch = None
 
 
 # ─── Paths ──────────────────────────────────────────────────────────
@@ -94,15 +100,20 @@ IMAGE_SIZE = 224
 def set_seed(seed: int = 42):
     """Set random seeds for reproducibility across all libraries."""
     random.seed(seed)
-    np.random.seed(seed)
-    torch.manual_seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
+    if np is not None:
+        np.random.seed(seed)
+    if torch is not None:
+        torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(seed)
+        torch.backends.cudnn.deterministic = True
+        torch.backends.cudnn.benchmark = False
 
 
-def get_device() -> torch.device:
-    """Return the best available device (CUDA > CPU)."""
+def get_device():
+    """Return the best available device (CUDA > CPU), or 'cpu' if torch unavailable."""
+    if torch is None:
+        return "cpu"
     return torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
