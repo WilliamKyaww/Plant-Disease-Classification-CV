@@ -48,9 +48,9 @@ run_phase1.bat
 ```
 
 Equivalent step-by-step commands:
-1. Integrity audit (missing/corrupt/exact duplicates/near duplicates):
+1. Integrity audit (missing/corrupt/exact duplicates/near duplicates) with report artifacts:
 ```bash
-py -3.13 -m src.integrity
+py -3.13 -m src.integrity_report
 ```
 
 2. Build frozen multi-class labels + stratified splits + split manifest:
@@ -64,6 +64,8 @@ Generated artifacts:
 3. `CSV/plantvillage_val.csv`
 4. `CSV/plantvillage_test.csv`
 5. `results/split_manifests/latest_split_manifest.json`
+6. `results/integrity_reports/latest_integrity_report.json`
+7. `results/integrity_reports/latest_integrity_report.txt`
 
 ## Notebook Status
 1. `01_dataset_preparation.ipynb` calls `src.integrity` and `src.prepare_splits`.

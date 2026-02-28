@@ -3,8 +3,8 @@ setlocal
 
 cd /d "%~dp0"
 
-echo [1/3] Running dataset integrity checks with Python 3.13...
-py -3.13 -m src.integrity
+echo [1/3] Running integrity checks and writing JSON/TXT artifacts with Python 3.13...
+py -3.13 -m src.integrity_report
 if errorlevel 1 goto :fail
 
 echo [2/3] Generating frozen splits with Python 3.13...

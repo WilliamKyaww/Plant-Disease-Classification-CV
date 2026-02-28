@@ -49,6 +49,12 @@ build/
 results/split_manifests/*.json
 !results/split_manifests/latest_split_manifest.json
 
+# Track only latest integrity artifacts; ignore timestamped variants
+results/integrity_reports/*.json
+results/integrity_reports/*.txt
+!results/integrity_reports/latest_integrity_report.json
+!results/integrity_reports/latest_integrity_report.txt
+
 # ============================================================
 # IDE / OS / Documentation
 # ============================================================

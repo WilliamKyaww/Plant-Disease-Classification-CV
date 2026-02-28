@@ -1,0 +1,60 @@
+Dataset Integrity Report
+============================================================
+Timestamp: 2026-02-28T21:51:35.279933
+Git commit: f5fdb14a1772f8ef1c55dc026330ff46422ebd67
+Dataset dir: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets
+Passed: False
+
+Counts
+------------------------------------------------------------
+Total images: 20638
+Missing/empty folders: 0
+Corrupt images: 0
+Exact cross-class duplicate groups: 0
+Near-duplicate cross-class pairs (dHash <= 5): 14
+
+Near-Duplicate Preview Pairs (first 20)
+------------------------------------------------------------
+- d=5 | Pepper__bell___healthy <-> Tomato_Septoria_leaf_spot
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Pepper__bell___healthy\cfbbeb79-9aba-4011-ba99-470509286459___JR_HL 5826.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Septoria_leaf_spot\06778fed-2b98-49b1-a9d3-d57765586a3f___Matt.S_CG 2795.JPG
+- d=3 | Pepper__bell___healthy <-> Pepper__bell___Bacterial_spot
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Pepper__bell___healthy\d53487cf-1f9c-464a-bf4e-aff3277e85b3___JR_HL 7885.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Pepper__bell___Bacterial_spot\64367d1d-8954-432d-94bf-9ee75a812a85___NREC_B.Spot 1890.JPG
+- d=5 | Pepper__bell___Bacterial_spot <-> Tomato__Tomato_YellowLeaf__Curl_Virus
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Pepper__bell___Bacterial_spot\47773ddb-e400-4a5d-87ec-ce711044c31e___NREC_B.Spot 9235.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato__Tomato_YellowLeaf__Curl_Virus\1b568289-2f14-4019-b028-3f02ffe3752b___YLCV_NREC 2254.JPG
+- d=5 | Potato___Early_blight <-> Tomato_healthy
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Potato___Early_blight\c42b5e69-2673-42ef-8e14-a785fea3aad6___RS_Early.B 9107.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_healthy\4f334ff5-0f0a-4d15-8760-448bebddd4f2___GH_HL Leaf 527.JPG
+- d=4 | Tomato_Bacterial_spot <-> Tomato__Target_Spot
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Bacterial_spot\166a69a7-cae0-4e6e-ac75-bc207a5335f4___GCREC_Bact.Sp 5705.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato__Target_Spot\fddfa96b-42a0-43f1-bbee-eac32d7caff7___Com.G_TgS_FL 9820.JPG
+- d=5 | Tomato_Bacterial_spot <-> Tomato_Late_blight
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Bacterial_spot\2e44b9e9-05f3-4465-9747-b90a5ea44579___UF.GRC_BS_Lab Leaf 0224.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Late_blight\2159d0f7-09ef-46ad-ad49-749e8ce1becc___GHLB2 Leaf 8836.JPG
+- d=5 | Tomato_Bacterial_spot <-> Tomato_Spider_mites_Two_spotted_spider_mite
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Bacterial_spot\517dac9f-61a6-4e5a-928e-b0009c2d6d47___GCREC_Bact.Sp 3516.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Spider_mites_Two_spotted_spider_mite\f03ba5ea-8380-4386-9e30-2e588a27d94a___Com.G_SpM_FL 9526.JPG
+- d=5 | Tomato_Bacterial_spot <-> Tomato_Spider_mites_Two_spotted_spider_mite
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Bacterial_spot\5360a154-707e-47fe-94cf-dbe155b648bd___GCREC_Bact.Sp 3270.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Spider_mites_Two_spotted_spider_mite\6bf31bc7-0d00-4303-a3d5-20733c36fa5d___Com.G_SpM_FL 1761.JPG
+- d=5 | Tomato_Bacterial_spot <-> Tomato_Early_blight
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Bacterial_spot\928c16b7-3be2-4646-b108-73c669974a7c___GCREC_Bact.Sp 3603.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Early_blight\b0bc0b85-fce9-43cc-87d1-481d4a107b5c___RS_Erly.B 9451.JPG
+- d=5 | Tomato_Bacterial_spot <-> Tomato_Spider_mites_Two_spotted_spider_mite
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Bacterial_spot\c37d3b8a-fecc-488a-ab78-c00f5240283c___GCREC_Bact.Sp 3343.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Spider_mites_Two_spotted_spider_mite\ac1d7686-c250-47b4-a16d-046305b99d2a___Com.G_SpM_FL 8725.JPG
+- d=4 | Tomato_Bacterial_spot <-> Tomato_Spider_mites_Two_spotted_spider_mite
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Bacterial_spot\c37d3b8a-fecc-488a-ab78-c00f5240283c___GCREC_Bact.Sp 3343.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Spider_mites_Two_spotted_spider_mite\f03ba5ea-8380-4386-9e30-2e588a27d94a___Com.G_SpM_FL 9526.JPG
+- d=5 | Tomato_Late_blight <-> Tomato_Spider_mites_Two_spotted_spider_mite
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Late_blight\e686c35e-fcb4-463b-ad2a-2c1da18135bb___GHLB2 Leaf 9023.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Spider_mites_Two_spotted_spider_mite\ecdbc53e-17ad-4807-9f8d-c548de7e5cfb___Com.G_SpM_FL 1138.JPG
+- d=5 | Tomato_Septoria_leaf_spot <-> Tomato_Spider_mites_Two_spotted_spider_mite
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Septoria_leaf_spot\8c4da308-2be0-4f8b-8899-dac9eb728ad5___Matt.S_CG 1438.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Spider_mites_Two_spotted_spider_mite\f4a12c44-b3a8-4419-b34e-ae6bdfa7d765___Com.G_SpM_FL 9521.JPG
+- d=4 | Tomato_Spider_mites_Two_spotted_spider_mite <-> Tomato__Target_Spot
+  A: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato_Spider_mites_Two_spotted_spider_mite\e13060fe-90fb-49c9-ab46-9a4cfd68c02a___Com.G_SpM_FL 1749.JPG
+  B: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\Datasets\Tomato__Target_Spot\c6fc37bf-8462-49c9-ac5c-a5f078e34ea4___Com.G_TgS_FL 7958.JPG
+
