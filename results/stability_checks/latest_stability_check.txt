@@ -1,0 +1,11 @@
+Baseline Stability Check
+============================================================
+Timestamp: 2026-02-28T22:57:27.365342
+Git commit: 00aeca2c0b9ea7cae34e1378a3f0f9962d7dd59b
+Seeds: [41, 42, 43]
+
+Summary
+------------------------------------------------------------
+Runs: 3
+Test accuracy mean +/- std: 0.0990 +/- 0.0239
+Test F1 macro mean +/- std: 0.0267 +/- 0.0146

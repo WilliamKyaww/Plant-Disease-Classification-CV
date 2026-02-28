@@ -68,6 +68,11 @@ py -3.13 -m src.run_baseline_smoke --epochs 1 --batch-size 32 --max-train 128 --
 py -3.13 -m src.colab_smoke --repo-main .
 ```
 
+5. Run repeat-run stability check (3 seeds):
+```bash
+py -3.13 -m src.stability_check --seeds 41,42,43 --epochs 1 --batch-size 32 --max-train 128 --max-val 64 --max-test 64
+```
+
 Generated artifacts:
 1. `CSV/plantvillage_multiclass_labels.csv`
 2. `CSV/plantvillage_train.csv`
@@ -78,8 +83,12 @@ Generated artifacts:
 7. `results/integrity_reports/latest_integrity_report.txt`
 8. `results/baseline_smoke/latest_metrics_snapshot.json`
 9. `results/baseline_smoke/latest_experiment_log.json`
-10. `results/colab_smoke/latest_colab_smoke.json`
-11. `results/colab_smoke/latest_colab_smoke.txt`
+10. `results/baseline_smoke/latest_confusion_matrix.json`
+11. `results/baseline_smoke/latest_confusion_matrix.png`
+12. `results/colab_smoke/latest_colab_smoke.json`
+13. `results/colab_smoke/latest_colab_smoke.txt`
+14. `results/stability_checks/latest_stability_check.json`
+15. `results/stability_checks/latest_stability_check.txt`
 
 ## Notebook Status
 1. `01_dataset_preparation.ipynb` calls `src.integrity` and `src.prepare_splits`.

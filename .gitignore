@@ -58,14 +58,24 @@ results/integrity_reports/*.txt
 # Track only latest baseline smoke artifacts
 results/baseline_smoke/sample_splits/*.csv
 results/baseline_smoke/metrics_snapshot_*.json
+results/baseline_smoke/confusion_matrix_*.json
+results/baseline_smoke/confusion_matrix_*.png
 !results/baseline_smoke/latest_metrics_snapshot.json
 !results/baseline_smoke/latest_experiment_log.json
+!results/baseline_smoke/latest_confusion_matrix.json
+!results/baseline_smoke/latest_confusion_matrix.png
 
 # Track only latest colab smoke artifacts
 results/colab_smoke/*.json
 results/colab_smoke/*.txt
 !results/colab_smoke/latest_colab_smoke.json
 !results/colab_smoke/latest_colab_smoke.txt
+
+# Track only latest stability check artifacts
+results/stability_checks/*.json
+results/stability_checks/*.txt
+!results/stability_checks/latest_stability_check.json
+!results/stability_checks/latest_stability_check.txt
 
 # Keep baseline "latest" artifact copies; ignore raw experiment log fan-out
 results/experiment_logs/*.json

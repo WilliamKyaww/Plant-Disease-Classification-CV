@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-02-28T22:57:27.365342",
+  "git_commit": "00aeca2c0b9ea7cae34e1378a3f0f9962d7dd59b",
+  "config": {
+    "seeds": [
+      41,
+      42,
+      43
+    ],
+    "epochs": 1,
+    "batch_size": 32,
+    "lr": 0.001,
+    "max_train": 128,
+    "max_val": 64,
+    "max_test": 64
+  },
+  "per_run": [
+    {
+      "run_name": "resnet18_15class_smoke_seed41_20260228_225656",
+      "checkpoint_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\models\\resnet18_15class_smoke_seed41_20260228_225656.pth",
+      "metrics_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\metrics_snapshot_resnet18_15class_smoke_seed41_20260228_225656.json",
+      "confusion_matrix_json_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\confusion_matrix_resnet18_15class_smoke_seed41_20260228_225656.json",
+      "confusion_matrix_png_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\confusion_matrix_resnet18_15class_smoke_seed41_20260228_225656.png",
+      "log_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\experiment_logs\\resnet18_15class_smoke_seed41_20260228_225656.json",
+      "latest_log_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\latest_experiment_log.json",
+      "test_accuracy": 0.078125,
+      "test_f1_macro": 0.00980392156862745
+    },
+    {
+      "run_name": "resnet18_15class_smoke_seed42_20260228_225707",
+      "checkpoint_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\models\\resnet18_15class_smoke_seed42_20260228_225707.pth",
+      "metrics_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\metrics_snapshot_resnet18_15class_smoke_seed42_20260228_225707.json",
+      "confusion_matrix_json_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\confusion_matrix_resnet18_15class_smoke_seed42_20260228_225707.json",
+      "confusion_matrix_png_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\confusion_matrix_resnet18_15class_smoke_seed42_20260228_225707.png",
+      "log_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\experiment_logs\\resnet18_15class_smoke_seed42_20260228_225707.json",
+      "latest_log_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\latest_experiment_log.json",
+      "test_accuracy": 0.09375,
+      "test_f1_macro": 0.034126984126984124
+    },
+    {
+      "run_name": "resnet18_15class_smoke_seed43_20260228_225717",
+      "checkpoint_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\models\\resnet18_15class_smoke_seed43_20260228_225717.pth",
+      "metrics_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\metrics_snapshot_resnet18_15class_smoke_seed43_20260228_225717.json",
+      "confusion_matrix_json_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\confusion_matrix_resnet18_15class_smoke_seed43_20260228_225717.json",
+      "confusion_matrix_png_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\confusion_matrix_resnet18_15class_smoke_seed43_20260228_225717.png",
+      "log_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\experiment_logs\\resnet18_15class_smoke_seed43_20260228_225717.json",
+      "latest_log_path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\results\\baseline_smoke\\latest_experiment_log.json",
+      "test_accuracy": 0.125,
+      "test_f1_macro": 0.036104006820119355
+    }
+  ],
+  "summary": {
+    "n_runs": 3,
+    "test_accuracy_mean": 0.09895833333333333,
+    "test_accuracy_std": 0.023867581744561668,
+    "test_f1_macro_mean": 0.02667830417191031,
+    "test_f1_macro_std": 0.014647038808707182
+  }
+}

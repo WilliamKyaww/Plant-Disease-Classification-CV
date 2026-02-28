@@ -16,10 +16,12 @@ import os
 import shutil
 from datetime import datetime
 
+import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
 import torch.nn as nn
 import torch.optim as optim
-from sklearn.metrics import accuracy_score, classification_report, f1_score
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, f1_score
 from torchvision.models import resnet18
 
 try:
@@ -148,6 +150,7 @@ def run_baseline_smoke(
         zero_division=0,
         output_dict=True,
     )
+    cm = confusion_matrix(labels, preds, labels=list(range(NUM_CLASSES)))
 
     checkpoint_path = os.path.join(MODELS_DIR, f"{run_name}.pth")
     save_model(model, checkpoint_path)
@@ -182,6 +185,33 @@ def run_baseline_smoke(
 
     metrics_path = os.path.join(out_dir, f"metrics_snapshot_{run_name}.json")
     latest_metrics_path = os.path.join(out_dir, "latest_metrics_snapshot.json")
+
+    cm_json_path = os.path.join(out_dir, f"confusion_matrix_{run_name}.json")
+    latest_cm_json_path = os.path.join(out_dir, "latest_confusion_matrix.json")
+    cm_png_path = os.path.join(out_dir, f"confusion_matrix_{run_name}.png")
+    latest_cm_png_path = os.path.join(out_dir, "latest_confusion_matrix.png")
+
+    cm_payload = {
+        "run_name": run_name,
+        "timestamp": datetime.now().isoformat(),
+        "class_names": CLASS_NAMES,
+        "matrix": cm.tolist(),
+    }
+    with open(cm_json_path, "w", encoding="utf-8") as f:
+        json.dump(cm_payload, f, indent=2)
+    with open(latest_cm_json_path, "w", encoding="utf-8") as f:
+        json.dump(cm_payload, f, indent=2)
+
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(cm, cmap="Blues", cbar=True, xticklabels=False, yticklabels=False)
+    plt.title(f"Confusion Matrix - {run_name}")
+    plt.xlabel("Predicted class index")
+    plt.ylabel("True class index")
+    plt.tight_layout()
+    plt.savefig(cm_png_path, dpi=150)
+    plt.close()
+    shutil.copyfile(cm_png_path, latest_cm_png_path)
+
     with open(metrics_path, "w", encoding="utf-8") as f:
         json.dump(metrics_snapshot, f, indent=2)
     with open(latest_metrics_path, "w", encoding="utf-8") as f:
@@ -209,6 +239,8 @@ def run_baseline_smoke(
     )
     log.set_file_artifact("split_manifest_file", split_manifest_path)
     log.set_file_artifact("metrics_snapshot_file", metrics_path)
+    log.set_file_artifact("confusion_matrix_json_file", cm_json_path)
+    log.set_file_artifact("confusion_matrix_png_file", cm_png_path)
     log.set_file_artifact("model_checkpoint_file", checkpoint_path)
     log.set_metrics(
         test_accuracy=test_acc,
@@ -222,6 +254,8 @@ def run_baseline_smoke(
     print(f"Smoke run complete: {run_name}")
     print(f"Model checkpoint: {checkpoint_path}")
     print(f"Metrics snapshot: {metrics_path}")
+    print(f"Confusion matrix JSON: {cm_json_path}")
+    print(f"Confusion matrix PNG: {cm_png_path}")
     print(f"Experiment log: {log_path}")
     print(f"Latest experiment log: {latest_log_path}")
 
@@ -229,6 +263,8 @@ def run_baseline_smoke(
         "run_name": run_name,
         "checkpoint_path": checkpoint_path,
         "metrics_path": metrics_path,
+        "confusion_matrix_json_path": cm_json_path,
+        "confusion_matrix_png_path": cm_png_path,
         "log_path": log_path,
         "latest_log_path": latest_log_path,
         "test_accuracy": test_acc,
