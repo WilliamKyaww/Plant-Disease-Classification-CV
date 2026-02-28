@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-02-28T19:56:55.000125",
+  "seed": 42,
+  "git_commit": "8a53132fa5c0d68f5687a2b5d8010e488c6d5142",
+  "label_column": "class_label",
+  "splits": {
+    "train": {
+      "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_train.csv",
+      "sha256": "90dbd96bcab3adf7eac2dede48ddb4951f2303628161e92c3e981ad123234d00",
+      "rows": 14446,
+      "class_counts": {
+        "0": 1035,
+        "1": 698,
+        "2": 106,
+        "3": 700,
+        "4": 700,
+        "5": 1114,
+        "6": 1489,
+        "7": 700,
+        "8": 1336,
+        "9": 666,
+        "10": 1240,
+        "11": 1173,
+        "12": 983,
+        "13": 2245,
+        "14": 261
+      }
+    },
+    "val": {
+      "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_val.csv",
+      "sha256": "ebbd95d64247c55ffa2cb2783871f39ad3fe5eac441dbb6db323bc007f80df88",
+      "rows": 3096,
+      "class_counts": {
+        "0": 222,
+        "1": 150,
+        "2": 23,
+        "3": 150,
+        "4": 150,
+        "5": 238,
+        "6": 319,
+        "7": 150,
+        "8": 286,
+        "9": 143,
+        "10": 265,
+        "11": 252,
+        "12": 210,
+        "13": 482,
+        "14": 56
+      }
+    },
+    "test": {
+      "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_test.csv",
+      "sha256": "6681e5b757112efc21442794af9537a21d79aa1c8b6552f0a55c29ace2ee014a",
+      "rows": 3096,
+      "class_counts": {
+        "0": 221,
+        "1": 149,
+        "2": 23,
+        "3": 150,
+        "4": 150,
+        "5": 239,
+        "6": 319,
+        "7": 150,
+        "8": 287,
+        "9": 143,
+        "10": 266,
+        "11": 251,
+        "12": 211,
+        "13": 481,
+        "14": 56
+      }
+    }
+  },
+  "all_labels_csv": {
+    "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_multiclass_labels.csv",
+    "sha256": "0ac0400f89373d9bd210cf433902f59539af7e3c82e53983411aa83e9ccb9153",
+    "rows": 20638,
+    "class_counts": {
+      "0": 1478,
+      "1": 997,
+      "2": 152,
+      "3": 1000,
+      "4": 1000,
+      "5": 1591,
+      "6": 2127,
+      "7": 1000,
+      "8": 1909,
+      "9": 952,
+      "10": 1771,
+      "11": 1676,
+      "12": 1404,
+      "13": 3208,
+      "14": 373
+    }
+  }
+}

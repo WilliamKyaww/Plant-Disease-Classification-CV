@@ -10,10 +10,13 @@ Datasets/
 helper scripts/*.py
 
 # ============================================================
-# Generated CSV files (reproducible from notebooks)
+# Generated CSV files (track frozen split artifacts, ignore the rest)
 # ============================================================
-CSV/
-*.csv
+CSV/*
+!CSV/plantvillage_multiclass_labels.csv
+!CSV/plantvillage_train.csv
+!CSV/plantvillage_val.csv
+!CSV/plantvillage_test.csv
 
 # ============================================================
 # Saved model weights (too large for git)
@@ -32,7 +35,8 @@ models/*.ckpt
 # Jupyter / Python artefacts
 # ===============
 .ipynb_checkpoints/
-Google Colab/
+Google Colab/*
+!Google Colab/Plant_Disease.ipynb
 __pycache__/
 *.pyc
 *.pyo
@@ -41,6 +45,10 @@ __pycache__/
 dist/
 build/
 
+# Track only canonical manifest; ignore timestamped variants
+results/split_manifests/*.json
+!results/split_manifests/latest_split_manifest.json
+
 # ============================================================
 # IDE / OS / Documentation
 # ============================================================
@@ -48,4 +56,3 @@ build/
 .idea/
 .DS_Store
 Thumbs.db
-README.md

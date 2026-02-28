@@ -11,7 +11,7 @@ from torch.utils.data import Dataset
 # General-purpose dataset for plant disease classification
 class PlantDiseaseDataset(Dataset):
     """
-    Reads a CSV with columns: image_path, crop, disease, label
+    Reads a CSV with columns including image_path and a label column
     and returns (image_tensor, label) pairs.
 
     The 'label_column' parameter controls which column is used as
@@ -21,7 +21,7 @@ class PlantDiseaseDataset(Dataset):
       - Severity estimation (label_column="severity")
     """
 
-    def __init__(self, csv_file: str, label_column: str = "label",
+    def __init__(self, csv_file: str, label_column: str = "class_label",
                  transform=None, root_dir: str = None):
 
         self.df = pd.read_csv(csv_file)
@@ -29,7 +29,14 @@ class PlantDiseaseDataset(Dataset):
         self.transform = transform
         self.root_dir = root_dir
 
-        # Drop rows where label is NaN (useful for severity column)
+        if label_column not in self.df.columns:
+            available = ", ".join(self.df.columns.tolist())
+            raise ValueError(
+                f"Column '{label_column}' not found in {csv_file}. "
+                f"Available columns: {available}"
+            )
+
+        # Drop rows where label is NaN (useful for optional severity column)
         self.df = self.df.dropna(subset=[label_column]).reset_index(drop=True)
 
     def __len__(self) -> int:
@@ -74,7 +81,7 @@ class PlantDiseaseDataset(Dataset):
 
 def create_dataloaders(train_csv: str, val_csv: str, test_csv: str,
                        train_transform, val_transform,
-                       label_column: str = "label",
+                       label_column: str = "class_label",
                        batch_size: int = 32, num_workers: int = 0,
                        root_dir: str = None):
    
