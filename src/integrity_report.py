@@ -12,12 +12,34 @@ from datetime import datetime
 
 try:
     from src.integrity import run_all_checks
-    from src.utils import DATASETS_DIR, RESULTS_DIR
-    from src.experiment_log import get_git_commit_hash
+    from src.utils import DATASETS_DIR, PROJECT_ROOT, RESULTS_DIR
+    from src.experiment_log import get_git_commit_hash, to_project_relative
 except ImportError:
     from .integrity import run_all_checks
-    from .utils import DATASETS_DIR, RESULTS_DIR
-    from .experiment_log import get_git_commit_hash
+    from .utils import DATASETS_DIR, PROJECT_ROOT, RESULTS_DIR
+    from .experiment_log import get_git_commit_hash, to_project_relative
+
+
+def _relativize_paths(obj):
+    """
+    Recursively rewrite project-local absolute paths to repo-relative strings
+    for portability in report artifacts.
+    """
+    if isinstance(obj, dict):
+        return {k: _relativize_paths(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_relativize_paths(v) for v in obj]
+    if isinstance(obj, str):
+        looks_like_path = (
+            "\\" in obj
+            or "/" in obj
+            or (len(obj) > 2 and obj[1] == ":" and obj[2] in ("\\", "/"))
+            or obj.startswith(".")
+        )
+        if looks_like_path:
+            return to_project_relative(obj, repo_dir=PROJECT_ROOT)
+        return obj
+    return obj
 
 
 def _build_text_summary(payload: dict) -> str:
@@ -113,13 +135,13 @@ def run_and_save_report(
     payload = {
         "timestamp": datetime.now().isoformat(),
         "git_commit": get_git_commit_hash(repo_dir=os.path.dirname(RESULTS_DIR)),
-        "dataset_dir": DATASETS_DIR,
+        "dataset_dir": to_project_relative(DATASETS_DIR, repo_dir=PROJECT_ROOT),
         "run_config": {
             "run_near_duplicates": run_near_duplicates,
             "near_duplicate_distance": near_duplicate_distance,
             "verbose": verbose,
         },
-        "report": report,
+        "report": _relativize_paths(report),
     }
 
     json_path = os.path.join(output_dir, f"integrity_report_{timestamp}.json")

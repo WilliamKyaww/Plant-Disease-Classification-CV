@@ -19,11 +19,11 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 try:
-    from src.utils import DATASETS_DIR, CSV_DIR, RESULTS_DIR, FOLDER_METADATA, set_seed, ensure_dirs
-    from src.experiment_log import sha256_file, get_git_commit_hash
+    from src.utils import PROJECT_ROOT, DATASETS_DIR, CSV_DIR, RESULTS_DIR, FOLDER_METADATA, set_seed, ensure_dirs
+    from src.experiment_log import sha256_file, get_git_commit_hash, to_project_relative
 except ImportError:
-    from .utils import DATASETS_DIR, CSV_DIR, RESULTS_DIR, FOLDER_METADATA, set_seed, ensure_dirs
-    from .experiment_log import sha256_file, get_git_commit_hash
+    from .utils import PROJECT_ROOT, DATASETS_DIR, CSV_DIR, RESULTS_DIR, FOLDER_METADATA, set_seed, ensure_dirs
+    from .experiment_log import sha256_file, get_git_commit_hash, to_project_relative
 
 
 SEED = 42
@@ -150,26 +150,26 @@ def main():
         "label_column": "class_label",
         "splits": {
             "train": {
-                "path": train_csv,
+                "path": to_project_relative(train_csv, repo_dir=PROJECT_ROOT),
                 "sha256": sha256_file(train_csv),
                 "rows": int(len(train_df)),
                 "class_counts": train_df["class_label"].value_counts().sort_index().to_dict(),
             },
             "val": {
-                "path": val_csv,
+                "path": to_project_relative(val_csv, repo_dir=PROJECT_ROOT),
                 "sha256": sha256_file(val_csv),
                 "rows": int(len(val_df)),
                 "class_counts": val_df["class_label"].value_counts().sort_index().to_dict(),
             },
             "test": {
-                "path": test_csv,
+                "path": to_project_relative(test_csv, repo_dir=PROJECT_ROOT),
                 "sha256": sha256_file(test_csv),
                 "rows": int(len(test_df)),
                 "class_counts": test_df["class_label"].value_counts().sort_index().to_dict(),
             },
         },
         "all_labels_csv": {
-            "path": all_csv,
+            "path": to_project_relative(all_csv, repo_dir=PROJECT_ROOT),
             "sha256": sha256_file(all_csv),
             "rows": int(len(df)),
             "class_counts": df["class_label"].value_counts().sort_index().to_dict(),

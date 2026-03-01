@@ -45,6 +45,26 @@ except ImportError:
 LOGS_DIR = os.path.join(RESULTS_DIR, "experiment_logs")
 
 
+def to_project_relative(path: str, repo_dir: str = None) -> str:
+    """
+    Convert path to repo-relative (forward slashes) when possible.
+    Falls back to normalized absolute path if path is outside repo_dir.
+    """
+    if not path:
+        return path
+
+    norm_path = os.path.abspath(path)
+    if repo_dir:
+        repo_root = os.path.abspath(repo_dir)
+        try:
+            rel = os.path.relpath(norm_path, repo_root)
+            if not rel.startswith(".."):
+                return rel.replace("\\", "/")
+        except Exception:
+            pass
+    return norm_path.replace("\\", "/")
+
+
 def sha256_file(filepath: str, block_size: int = 65536) -> str:
     """Compute SHA256 hash for an artifact file."""
     hasher = hashlib.sha256()
@@ -163,16 +183,17 @@ class ExperimentLog:
         }
 
         for split_name, path in split_paths.items():
+            display_path = to_project_relative(path, repo_dir=repo_dir)
             if not os.path.exists(path):
                 manifest["splits"][split_name] = {
-                    "path": path,
+                    "path": display_path,
                     "exists": False,
                 }
                 continue
 
             summary = summarize_split_csv(path, label_column=label_column)
             manifest["splits"][split_name] = {
-                "path": path,
+                "path": display_path,
                 "exists": True,
                 "sha256": sha256_file(path),
                 "rows": summary["rows"],
@@ -181,12 +202,12 @@ class ExperimentLog:
 
         self.data["artifacts"]["split_manifest"] = manifest
 
-    def set_file_artifact(self, name: str, path: str):
+    def set_file_artifact(self, name: str, path: str, repo_dir: str = None):
         """
         Record a single file artifact with existence, SHA256, and size metadata.
         """
         artifact = {
-            "path": path,
+            "path": to_project_relative(path, repo_dir=repo_dir),
             "exists": os.path.exists(path),
         }
         if artifact["exists"]:

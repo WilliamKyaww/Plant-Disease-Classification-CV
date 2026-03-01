@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-02-28T22:04:47.530805",
+  "timestamp": "2026-03-01T15:20:34.505849",
   "seed": 42,
-  "git_commit": "7062d2e10950852443e8619ca5fea5ca7acb86e3",
+  "git_commit": "e574fdb9c71e79cf8f276bebaea29c3ff4797c2e",
   "label_column": "class_label",
   "splits": {
     "train": {
-      "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_train.csv",
+      "path": "CSV/plantvillage_train.csv",
       "sha256": "90dbd96bcab3adf7eac2dede48ddb4951f2303628161e92c3e981ad123234d00",
       "rows": 14446,
       "class_counts": {
@@ -27,7 +27,7 @@
       }
     },
     "val": {
-      "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_val.csv",
+      "path": "CSV/plantvillage_val.csv",
       "sha256": "ebbd95d64247c55ffa2cb2783871f39ad3fe5eac441dbb6db323bc007f80df88",
       "rows": 3096,
       "class_counts": {
@@ -49,7 +49,7 @@
       }
     },
     "test": {
-      "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_test.csv",
+      "path": "CSV/plantvillage_test.csv",
       "sha256": "6681e5b757112efc21442794af9537a21d79aa1c8b6552f0a55c29ace2ee014a",
       "rows": 3096,
       "class_counts": {
@@ -72,7 +72,7 @@
     }
   },
   "all_labels_csv": {
-    "path": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_multiclass_labels.csv",
+    "path": "CSV/plantvillage_multiclass_labels.csv",
     "sha256": "0ac0400f89373d9bd210cf433902f59539af7e3c82e53983411aa83e9ccb9153",
     "rows": 20638,
     "class_counts": {

@@ -19,6 +19,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+import torch
 import torch.nn as nn
 import torch.optim as optim
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, f1_score
@@ -26,7 +27,7 @@ from torchvision.models import resnet18
 
 try:
     from src.datasets import create_dataloaders
-    from src.experiment_log import ExperimentLog, sha256_file
+    from src.experiment_log import ExperimentLog, sha256_file, to_project_relative
     from src.training import evaluate_model, save_model, train_model
     from src.transforms import get_train_transform, get_val_transform
     from src.utils import (
@@ -41,7 +42,7 @@ try:
     )
 except ImportError:
     from .datasets import create_dataloaders
-    from .experiment_log import ExperimentLog, sha256_file
+    from .experiment_log import ExperimentLog, sha256_file, to_project_relative
     from .training import evaluate_model, save_model, train_model
     from .transforms import get_train_transform, get_val_transform
     from .utils import (
@@ -72,6 +73,28 @@ def _sample_split(df: pd.DataFrame, n_max: int, seed: int, label_column: str) ->
     return sampled.reset_index(drop=True)
 
 
+def _inverse_frequency_class_weights(
+    df: pd.DataFrame,
+    label_column: str,
+    num_classes: int,
+    device,
+) -> torch.Tensor:
+    counts = df[label_column].value_counts().to_dict()
+    total = float(len(df))
+    weights = []
+    for class_idx in range(num_classes):
+        count = float(counts.get(class_idx, 0))
+        if count <= 0:
+            weights.append(0.0)
+        else:
+            # Balanced heuristic: N / (C * n_c)
+            weights.append(total / (num_classes * count))
+    tensor = torch.tensor(weights, dtype=torch.float32, device=device)
+    if tensor.sum().item() > 0:
+        tensor = tensor / tensor.mean()
+    return tensor
+
+
 def run_baseline_smoke(
     epochs: int = 1,
     batch_size: int = 16,
@@ -80,6 +103,7 @@ def run_baseline_smoke(
     max_train: int = 256,
     max_val: int = 96,
     max_test: int = 96,
+    class_weighting: str = "none",
 ):
     set_seed(seed)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -126,7 +150,15 @@ def run_baseline_smoke(
     model.fc = nn.Linear(model.fc.in_features, NUM_CLASSES)
     model = model.to(device)
 
-    criterion = nn.CrossEntropyLoss()
+    class_weight_values = None
+    if class_weighting == "inverse_frequency":
+        class_weights = _inverse_frequency_class_weights(
+            train_df_s, label_column=label_column, num_classes=NUM_CLASSES, device=device
+        )
+        class_weight_values = [float(v) for v in class_weights.detach().cpu().tolist()]
+        criterion = nn.CrossEntropyLoss(weight=class_weights)
+    else:
+        criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
     model, history = train_model(
@@ -162,6 +194,12 @@ def run_baseline_smoke(
         sha256_file(split_manifest_path) if os.path.exists(split_manifest_path) else None
     )
 
+    smoke_note = (
+        "Smoke run for pipeline validation only. "
+        "Low metrics are expected because training uses random initialization, "
+        f"{epochs} epoch(s), and sampled subsets (train={len(train_df_s)})."
+    )
+
     metrics_snapshot = {
         "run_name": run_name,
         "timestamp": datetime.now().isoformat(),
@@ -170,17 +208,20 @@ def run_baseline_smoke(
         "batch_size": batch_size,
         "learning_rate": lr,
         "label_column": label_column,
+        "class_weighting": class_weighting,
+        "class_weights": class_weight_values,
         "device": str(device),
         "train_samples": int(len(train_df_s)),
         "val_samples": int(len(val_df_s)),
         "test_samples": int(len(test_df_s)),
         "test_accuracy": test_acc,
         "test_f1_macro": test_f1_macro,
-        "split_manifest_path": split_manifest_path,
+        "notes": smoke_note,
+        "split_manifest_path": to_project_relative(split_manifest_path, repo_dir=PROJECT_ROOT),
         "split_manifest_sha256": split_manifest_hash,
         "history": history,
         "classification_report": report,
-        "checkpoint_path": checkpoint_path,
+        "checkpoint_path": to_project_relative(checkpoint_path, repo_dir=PROJECT_ROOT),
     }
 
     metrics_path = os.path.join(out_dir, f"metrics_snapshot_{run_name}.json")
@@ -225,10 +266,13 @@ def run_baseline_smoke(
         lr=lr,
         seed=seed,
         label_column=label_column,
+        class_weighting=class_weighting,
+        class_weights=class_weight_values,
         sampled_train_rows=int(len(train_df_s)),
         sampled_val_rows=int(len(val_df_s)),
         sampled_test_rows=int(len(test_df_s)),
     )
+    log.set_notes(smoke_note)
     log.set_environment()
     log.set_git_commit(repo_dir=PROJECT_ROOT)
     log.set_split_artifacts(
@@ -237,11 +281,11 @@ def run_baseline_smoke(
         label_column=label_column,
         repo_dir=PROJECT_ROOT,
     )
-    log.set_file_artifact("split_manifest_file", split_manifest_path)
-    log.set_file_artifact("metrics_snapshot_file", metrics_path)
-    log.set_file_artifact("confusion_matrix_json_file", cm_json_path)
-    log.set_file_artifact("confusion_matrix_png_file", cm_png_path)
-    log.set_file_artifact("model_checkpoint_file", checkpoint_path)
+    log.set_file_artifact("split_manifest_file", split_manifest_path, repo_dir=PROJECT_ROOT)
+    log.set_file_artifact("metrics_snapshot_file", metrics_path, repo_dir=PROJECT_ROOT)
+    log.set_file_artifact("confusion_matrix_json_file", cm_json_path, repo_dir=PROJECT_ROOT)
+    log.set_file_artifact("confusion_matrix_png_file", cm_png_path, repo_dir=PROJECT_ROOT)
+    log.set_file_artifact("model_checkpoint_file", checkpoint_path, repo_dir=PROJECT_ROOT)
     log.set_metrics(
         test_accuracy=test_acc,
         test_f1_macro=test_f1_macro,
@@ -281,6 +325,13 @@ def parse_args():
     parser.add_argument("--max-train", type=int, default=256)
     parser.add_argument("--max-val", type=int, default=96)
     parser.add_argument("--max-test", type=int, default=96)
+    parser.add_argument(
+        "--class-weighting",
+        type=str,
+        choices=["none", "inverse_frequency"],
+        default="none",
+        help="Class-imbalance mitigation mode for CrossEntropyLoss.",
+    )
     return parser.parse_args()
 
 
@@ -294,4 +345,5 @@ if __name__ == "__main__":
         max_train=args.max_train,
         max_val=args.max_val,
         max_test=args.max_test,
+        class_weighting=args.class_weighting,
     )

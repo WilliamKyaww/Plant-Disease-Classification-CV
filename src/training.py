@@ -26,6 +26,7 @@ def train_model(model, criterion, optimizer, train_loader, val_loader,
     for epoch in range(num_epochs):
         print(f"\nEpoch {epoch + 1}/{num_epochs}")
         print("-" * 40)
+        val_loss_for_scheduler = None
 
         for phase in ["train", "val"]:
             if phase == "train":
@@ -39,7 +40,8 @@ def train_model(model, criterion, optimizer, train_loader, val_loader,
             running_corrects = 0
             total_samples = 0
 
-            for inputs, labels in dataloader:
+            progress = tqdm(dataloader, desc=f"{phase} epoch {epoch + 1}", leave=False)
+            for inputs, labels in progress:
                 inputs = inputs.to(device)
                 labels = labels.to(device)
 
@@ -73,6 +75,7 @@ def train_model(model, criterion, optimizer, train_loader, val_loader,
             else:
                 history["val_loss"].append(epoch_loss)
                 history["val_acc"].append(epoch_acc)
+                val_loss_for_scheduler = epoch_loss
 
                 # Best model tracking
                 if epoch_acc > best_val_acc:
@@ -82,9 +85,17 @@ def train_model(model, criterion, optimizer, train_loader, val_loader,
                 else:
                     epochs_no_improve += 1
 
-        # Step the scheduler (if provided) after each epoch
+        # Step the scheduler (if provided) after each epoch.
+        # ReduceLROnPlateau requires a monitored metric argument.
         if scheduler is not None:
-            scheduler.step()
+            if scheduler.__class__.__name__ == "ReduceLROnPlateau":
+                if val_loss_for_scheduler is None:
+                    raise ValueError(
+                        "ReduceLROnPlateau requires validation loss, but val phase loss was unavailable."
+                    )
+                scheduler.step(val_loss_for_scheduler)
+            else:
+                scheduler.step()
 
         # Early stopping
         if early_stop_patience > 0 and epochs_no_improve >= early_stop_patience:
