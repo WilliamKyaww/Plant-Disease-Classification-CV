@@ -1,0 +1,183 @@
+{
+  "timestamp": "2026-03-02T20:06:39.614678",
+  "model": "efficientnet_b0",
+  "seed": 41,
+  "epochs": 1,
+  "batch_size": 16,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "scheduler": "cosine",
+  "patience": 7,
+  "class_weighting": "inverse_frequency",
+  "class_weights": [
+    0.4525003731250763,
+    0.7038894891738892,
+    6.335005283355713,
+    0.7038894891738892,
+    0.7038894891738892,
+    0.422333687543869,
+    0.31675025820732117,
+    0.7038894891738892,
+    0.3519447445869446,
+    0.7038894891738892,
+    0.39593783020973206,
+    0.39593783020973206,
+    0.4873080849647522,
+    0.2111668437719345,
+    2.111668348312378
+  ],
+  "pretrained": false,
+  "amp_requested": false,
+  "amp_active": false,
+  "device": "cpu",
+  "train_samples": 191,
+  "val_samples": 96,
+  "test_samples": 96,
+  "sampled_row_counts": {
+    "train": 191,
+    "val": 96,
+    "test": 96
+  },
+  "split_hashes": {
+    "train": "fda6259e76b606c000986080f50030c4d773175e04a2f018adb6b9123b328333",
+    "val": "fdb25b883074b60de3af6d6cc2e9acdad9fd540e85303c809155d990f01917cd",
+    "test": "e19bc33bc95d4bc01b653dad7838d729bc37c09ab1642de2413e8881bcd4f226"
+  },
+  "source_split_paths": {
+    "train": "results/phase2/sample_splits/seed_41/train.csv",
+    "val": "results/phase2/sample_splits/seed_41/val.csv",
+    "test": "results/phase2/sample_splits/seed_41/test.csv"
+  },
+  "test_accuracy": 0.10416666666666667,
+  "test_f1_macro": 0.012578616352201259,
+  "elapsed_seconds": 18.926109399995767,
+  "trainable_params": 4026763,
+  "model_size_bytes": 16377381,
+  "manifest_path": "results/split_manifests/latest_split_manifest.json",
+  "manifest_sha256": "ec820e7a318f48fd468f0a0e770e756901ff768c2a98bbc4e7ac610c5ffcdfbf",
+  "history": {
+    "train_loss": [
+      3.588554514640289
+    ],
+    "val_loss": [
+      3.0268725156784058
+    ],
+    "train_acc": [
+      0.07853403141361257
+    ],
+    "val_acc": [
+      0.10416666666666667
+    ],
+    "lr": [
+      0.0003
+    ]
+  },
+  "classification_report": {
+    "Pepper - Healthy": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 7.0
+    },
+    "Pepper - Bacterial Spot": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "Potato - Healthy": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "Potato - Early Blight": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "Potato - Late Blight": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 4.0
+    },
+    "Tomato - Healthy": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 6.0
+    },
+    "Tomato - Bacterial Spot": {
+      "precision": 0.10416666666666667,
+      "recall": 1.0,
+      "f1-score": 0.18867924528301888,
+      "support": 10.0
+    },
+    "Tomato - Early Blight": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "Tomato - Late Blight": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 9.0
+    },
+    "Tomato - Leaf Mold": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 4.0
+    },
+    "Tomato - Septoria Leaf Spot": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 8.0
+    },
+    "Tomato - Spider Mites": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 8.0
+    },
+    "Tomato - Target Spot": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 7.0
+    },
+    "Tomato - Yellow Leaf Curl Virus": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 15.0
+    },
+    "Tomato - Mosaic Virus": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 2.0
+    },
+    "accuracy": 0.10416666666666667,
+    "macro avg": {
+      "precision": 0.006944444444444445,
+      "recall": 0.06666666666666667,
+      "f1-score": 0.012578616352201259,
+      "support": 96.0
+    },
+    "weighted avg": {
+      "precision": 0.010850694444444446,
+      "recall": 0.10416666666666667,
+      "f1-score": 0.019654088050314465,
+      "support": 96.0
+    }
+  },
+  "checkpoint_path": "models/phase2/efficientnet_b0/seed_41/best.pth",
+  "confusion_matrix_json_path": "results/phase2/runs/efficientnet_b0/seed_41/confusion_matrix.json",
+  "confusion_matrix_png_path": "results/phase2/runs/efficientnet_b0/seed_41/confusion_matrix.png"
+}

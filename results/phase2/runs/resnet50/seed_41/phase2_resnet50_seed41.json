@@ -1,0 +1,166 @@
+{
+  "name": "phase2_resnet50_seed41",
+  "timestamp": "2026-03-02T20:06:19.993312",
+  "hyperparams": {
+    "model": "resnet50",
+    "seed": 41,
+    "epochs": 1,
+    "batch_size": 16,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine",
+    "patience": 7,
+    "class_weighting": "inverse_frequency",
+    "class_weights": [
+      0.4525003731250763,
+      0.7038894891738892,
+      6.335005283355713,
+      0.7038894891738892,
+      0.7038894891738892,
+      0.422333687543869,
+      0.31675025820732117,
+      0.7038894891738892,
+      0.3519447445869446,
+      0.7038894891738892,
+      0.39593783020973206,
+      0.39593783020973206,
+      0.4873080849647522,
+      0.2111668437719345,
+      2.111668348312378
+    ],
+    "pretrained": false,
+    "amp_requested": false,
+    "amp_active": false
+  },
+  "metrics": {
+    "test_accuracy": 0.10416666666666667,
+    "test_f1_macro": 0.012578616352201259,
+    "elapsed_seconds": 41.067059999972116
+  },
+  "environment": {
+    "python_version": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\willi\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pytorch_version": "2.9.1+cpu",
+    "cuda_available": false,
+    "cuda_version": null,
+    "gpu_name": null,
+    "gpu_memory_gb": null
+  },
+  "artifacts": {
+    "split_manifest": {
+      "timestamp": "2026-03-02T20:06:20.045016",
+      "seed": 42,
+      "label_column": "class_label",
+      "git_commit": "189ee1baaf0e2edc0ed904cb769cfd8df94df4c5",
+      "splits": {
+        "train": {
+          "path": "results/phase2/sample_splits/seed_41/train.csv",
+          "exists": true,
+          "sha256": "fda6259e76b606c000986080f50030c4d773175e04a2f018adb6b9123b328333",
+          "rows": 191,
+          "label_counts": {
+            "0": 14,
+            "1": 9,
+            "10": 16,
+            "11": 16,
+            "12": 13,
+            "13": 30,
+            "14": 3,
+            "2": 1,
+            "3": 9,
+            "4": 9,
+            "5": 15,
+            "6": 20,
+            "7": 9,
+            "8": 18,
+            "9": 9
+          }
+        },
+        "val": {
+          "path": "results/phase2/sample_splits/seed_41/val.csv",
+          "exists": true,
+          "sha256": "fdb25b883074b60de3af6d6cc2e9acdad9fd540e85303c809155d990f01917cd",
+          "rows": 96,
+          "label_counts": {
+            "0": 7,
+            "1": 5,
+            "10": 8,
+            "11": 8,
+            "12": 7,
+            "13": 15,
+            "14": 2,
+            "2": 1,
+            "3": 5,
+            "4": 4,
+            "5": 6,
+            "6": 10,
+            "7": 5,
+            "8": 9,
+            "9": 4
+          }
+        },
+        "test": {
+          "path": "results/phase2/sample_splits/seed_41/test.csv",
+          "exists": true,
+          "sha256": "e19bc33bc95d4bc01b653dad7838d729bc37c09ab1642de2413e8881bcd4f226",
+          "rows": 96,
+          "label_counts": {
+            "0": 7,
+            "1": 5,
+            "10": 8,
+            "11": 8,
+            "12": 7,
+            "13": 15,
+            "14": 2,
+            "2": 1,
+            "3": 5,
+            "4": 4,
+            "5": 6,
+            "6": 10,
+            "7": 5,
+            "8": 9,
+            "9": 4
+          }
+        }
+      }
+    },
+    "split_manifest_file": {
+      "path": "results/split_manifests/latest_split_manifest.json",
+      "exists": true,
+      "sha256": "ec820e7a318f48fd468f0a0e770e756901ff768c2a98bbc4e7ac610c5ffcdfbf",
+      "size_bytes": 2158,
+      "modified_time": "2026-03-01T15:20:34.664076"
+    },
+    "metrics_file": {
+      "path": "results/phase2/runs/resnet50/seed_41/metrics.json",
+      "exists": true,
+      "sha256": "62d344ec74e44c08a1c06fae0e1e2ee1313e4cee2780e24917f33aed32745d03",
+      "size_bytes": 4732,
+      "modified_time": "2026-03-02T20:06:19.992038"
+    },
+    "confusion_matrix_json_file": {
+      "path": "results/phase2/runs/resnet50/seed_41/confusion_matrix.json",
+      "exists": true,
+      "sha256": "1852d7f62342ae6343b5a89001db4d406f4d61891b19edb1317a5fab9ffd2281",
+      "size_bytes": 2998,
+      "modified_time": "2026-03-02T20:06:19.625491"
+    },
+    "confusion_matrix_png_file": {
+      "path": "results/phase2/runs/resnet50/seed_41/confusion_matrix.png",
+      "exists": true,
+      "sha256": "c76083d4b115fa8b0217f31f7e7a8d84b0e6dba1a533c63428294bad3ee5554a",
+      "size_bytes": 29293,
+      "modified_time": "2026-03-02T20:06:19.970183"
+    },
+    "model_checkpoint_file": {
+      "path": "models/phase2/resnet50/seed_41/best.pth",
+      "exists": true,
+      "sha256": "5d3d3db5d4aa0ec5deb754a5389a0c73090cae0951fe53a120473a74164311ca",
+      "size_bytes": 94450541,
+      "modified_time": "2026-03-02T20:06:19.622382"
+    }
+  },
+  "git_commit": "189ee1baaf0e2edc0ed904cb769cfd8df94df4c5",
+  "notes": "Phase 2 benchmark run"
+}

@@ -1,0 +1,166 @@
+{
+  "name": "phase2_vit_small_patch16_224_seed41",
+  "timestamp": "2026-03-02T20:07:10.632548",
+  "hyperparams": {
+    "model": "vit_small_patch16_224",
+    "seed": 41,
+    "epochs": 1,
+    "batch_size": 16,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "scheduler": "cosine",
+    "patience": 7,
+    "class_weighting": "inverse_frequency",
+    "class_weights": [
+      0.4525003731250763,
+      0.7038894891738892,
+      6.335005283355713,
+      0.7038894891738892,
+      0.7038894891738892,
+      0.422333687543869,
+      0.31675025820732117,
+      0.7038894891738892,
+      0.3519447445869446,
+      0.7038894891738892,
+      0.39593783020973206,
+      0.39593783020973206,
+      0.4873080849647522,
+      0.2111668437719345,
+      2.111668348312378
+    ],
+    "pretrained": false,
+    "amp_requested": false,
+    "amp_active": false
+  },
+  "metrics": {
+    "test_accuracy": 0.17708333333333334,
+    "test_f1_macro": 0.12073634899721856,
+    "elapsed_seconds": 30.251532699970994
+  },
+  "environment": {
+    "python_version": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\willi\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pytorch_version": "2.9.1+cpu",
+    "cuda_available": false,
+    "cuda_version": null,
+    "gpu_name": null,
+    "gpu_memory_gb": null
+  },
+  "artifacts": {
+    "split_manifest": {
+      "timestamp": "2026-03-02T20:07:10.680671",
+      "seed": 42,
+      "label_column": "class_label",
+      "git_commit": "189ee1baaf0e2edc0ed904cb769cfd8df94df4c5",
+      "splits": {
+        "train": {
+          "path": "results/phase2/sample_splits/seed_41/train.csv",
+          "exists": true,
+          "sha256": "fda6259e76b606c000986080f50030c4d773175e04a2f018adb6b9123b328333",
+          "rows": 191,
+          "label_counts": {
+            "0": 14,
+            "1": 9,
+            "10": 16,
+            "11": 16,
+            "12": 13,
+            "13": 30,
+            "14": 3,
+            "2": 1,
+            "3": 9,
+            "4": 9,
+            "5": 15,
+            "6": 20,
+            "7": 9,
+            "8": 18,
+            "9": 9
+          }
+        },
+        "val": {
+          "path": "results/phase2/sample_splits/seed_41/val.csv",
+          "exists": true,
+          "sha256": "fdb25b883074b60de3af6d6cc2e9acdad9fd540e85303c809155d990f01917cd",
+          "rows": 96,
+          "label_counts": {
+            "0": 7,
+            "1": 5,
+            "10": 8,
+            "11": 8,
+            "12": 7,
+            "13": 15,
+            "14": 2,
+            "2": 1,
+            "3": 5,
+            "4": 4,
+            "5": 6,
+            "6": 10,
+            "7": 5,
+            "8": 9,
+            "9": 4
+          }
+        },
+        "test": {
+          "path": "results/phase2/sample_splits/seed_41/test.csv",
+          "exists": true,
+          "sha256": "e19bc33bc95d4bc01b653dad7838d729bc37c09ab1642de2413e8881bcd4f226",
+          "rows": 96,
+          "label_counts": {
+            "0": 7,
+            "1": 5,
+            "10": 8,
+            "11": 8,
+            "12": 7,
+            "13": 15,
+            "14": 2,
+            "2": 1,
+            "3": 5,
+            "4": 4,
+            "5": 6,
+            "6": 10,
+            "7": 5,
+            "8": 9,
+            "9": 4
+          }
+        }
+      }
+    },
+    "split_manifest_file": {
+      "path": "results/split_manifests/latest_split_manifest.json",
+      "exists": true,
+      "sha256": "ec820e7a318f48fd468f0a0e770e756901ff768c2a98bbc4e7ac610c5ffcdfbf",
+      "size_bytes": 2158,
+      "modified_time": "2026-03-01T15:20:34.664076"
+    },
+    "metrics_file": {
+      "path": "results/phase2/runs/vit_small_patch16_224/seed_41/metrics.json",
+      "exists": true,
+      "sha256": "0178f3fa17c845e4c9c9a25f9a9096d70761d99261b59cdc572bbef3dd4f3c6f",
+      "size_bytes": 4917,
+      "modified_time": "2026-03-02T20:07:10.631711"
+    },
+    "confusion_matrix_json_file": {
+      "path": "results/phase2/runs/vit_small_patch16_224/seed_41/confusion_matrix.json",
+      "exists": true,
+      "sha256": "ee0bf502dcf8227b40fbed2085fb1036c62ed03a4c0a8e4e7bacd32c6a4911c5",
+      "size_bytes": 3009,
+      "modified_time": "2026-03-02T20:07:10.256003"
+    },
+    "confusion_matrix_png_file": {
+      "path": "results/phase2/runs/vit_small_patch16_224/seed_41/confusion_matrix.png",
+      "exists": true,
+      "sha256": "6e022746fae08265de505222a236c03b5417b354dbe108a5c5fba75bbe0013bf",
+      "size_bytes": 30416,
+      "modified_time": "2026-03-02T20:07:10.611034"
+    },
+    "model_checkpoint_file": {
+      "path": "models/phase2/vit_small_patch16_224/seed_41/best.pth",
+      "exists": true,
+      "sha256": "43b0951d0e60dfad20b55b18a8a0c561d2cca492a5a793f9527300ce39a00232",
+      "size_bytes": 86732469,
+      "modified_time": "2026-03-02T20:07:10.254003"
+    }
+  },
+  "git_commit": "189ee1baaf0e2edc0ed904cb769cfd8df94df4c5",
+  "notes": "Phase 2 benchmark run"
+}

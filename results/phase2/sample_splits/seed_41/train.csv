@@ -1,0 +1,192 @@
+image_path,crop,disease,binary_label,class_label,clean_name
+Datasets/Tomato__Target_Spot/75243ce6-3b50-40cd-916f-55ff316529ef___Com.G_TgS_FL 7968.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/6edbefd9-9755-456a-8ba9-dd7a9c467cc3___YLCV_GCREC 2533.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/c7bb5d91-e90c-4ade-b142-19f2828cf3fb___Com.G_SpM_FL 1172.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato__Target_Spot/8c37c82a-1eff-41f9-b485-8a889034d5cf___Com.G_TgS_FL 1050.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Potato___Late_blight/9c3ad8d7-58cb-4e7d-85c0-22f5cf105906___RS_LB 4680.JPG,potato,late_blight,1,4,Potato - Late Blight
+Datasets/Pepper__bell___healthy/36e6c861-dfbe-4452-bb94-be96ad479290___JR_HL 8086.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato_Late_blight/5fe78bd1-bf00-4863-93b9-5dc3ca8fbba4___RS_Late.B 5444.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/6805d9f7-8318-47cd-97cf-cd050e0e8db9___UF.GRC_YLCV_Lab 02504.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/5eae82f7-b6cb-457c-9a5e-c78b507aab00___UF.GRC_YLCV_Lab 02326.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/93c5c386-c326-4c46-8f77-81f142080f78___YLCV_NREC 2308.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Potato___Early_blight/68f056c9-4989-4809-b597-3739ff66afc3___RS_Early.B 8748.JPG,potato,early_blight,1,3,Potato - Early Blight
+Datasets/Tomato_healthy/7521718e-614b-4de0-ba94-f587b0113a69___RS_HL 0145.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Potato___Early_blight/e9f9e200-b7ff-4a59-af32-b4faf3f27b17___RS_Early.B 8028.JPG,potato,early_blight,1,3,Potato - Early Blight
+Datasets/Pepper__bell___Bacterial_spot/0705b53e-4c54-4fce-9bc0-833db0619f3d___JR_B.Spot 9068.JPG,pepper,bacterial_spot,1,1,Pepper - Bacterial Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/15553f35-1de9-4218-8472-6382d2c69597___UF.GRC_YLCV_Lab 01809.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/b967a703-bef2-4d8a-9159-ddae8b8430c5___Com.G_SpM_FL 8777.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Leaf_Mold/526cef23-88d8-4dd8-8ff4-eed6e98ac7d4___Crnl_L.Mold 6856.JPG,tomato,leaf_mold,1,9,Tomato - Leaf Mold
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/8eebd2c4-96f3-422f-aa65-e14f6a354ea5___UF.GRC_YLCV_Lab 01884.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Potato___Late_blight/ec5974a3-4c73-4129-a372-8ddec73eb246___RS_LB 3034.JPG,potato,late_blight,1,4,Potato - Late Blight
+Datasets/Tomato_healthy/a9108826-cab0-429d-9a81-c42b21ee2682___RS_HL 9874.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/7ee332d2-c589-4d11-8602-e96a622bc4d1___Com.G_SpM_FL 1702.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Pepper__bell___healthy/e446272d-9fe1-4efc-b9c4-326acd6f3162___JR_HL 8460.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato_Septoria_leaf_spot/daad8307-4482-4a22-bbd5-395fc6d767c6___Matt.S_CG 6637.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato_Late_blight/077c04cc-184d-4efd-bbc3-093cd61bedef___RS_Late.B 5560.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Bacterial_spot/e873f5c0-d887-496d-b037-6549e4c52d3a___UF.GRC_BS_Lab Leaf 9271.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/510030f2-ea9a-4b5c-9fa4-21767520e895___YLCV_NREC 0180.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Bacterial_spot/e28da6e4-81ad-42ff-ad15-b7a60d9546f2___GCREC_Bact.Sp 6363.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Leaf_Mold/0de02a32-f166-4d67-bbb8-689e96d04c44___Crnl_L.Mold 8811.JPG,tomato,leaf_mold,1,9,Tomato - Leaf Mold
+Datasets/Tomato_healthy/c298eb46-4b8f-4a5b-a819-ceabb2fc7211___RS_HL 9677.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/74888991-5de0-4851-affd-dd93d6fba9ce___Com.G_SpM_FL 1658.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Late_blight/cd11a26c-4833-4829-b6b7-29b03bc8df4d___RS_Late.B 5615.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Septoria_leaf_spot/8e15b503-716a-4aa4-83f8-62c7d9aae2f1___Matt.S_CG 7655.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Pepper__bell___Bacterial_spot/221f63bc-0c34-446b-b58f-bd47917f6838___JR_B.Spot 9077.JPG,pepper,bacterial_spot,1,1,Pepper - Bacterial Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/66bae4b8-716c-4e0e-a71d-f87d8e3bfa87___YLCV_GCREC 5467.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_healthy/dea347a1-4303-48e1-8db0-997d084e6bd0___RS_HL 9724.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato_Late_blight/4eecda06-df95-4222-b91f-b92111dd0b38___RS_Late.B 6070.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/df84f40f-a2b6-49db-af29-cb8917674a93___Com.G_SpM_FL 8588.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Bacterial_spot/458fa745-af8d-48e2-aa5e-06b60f722f30___GCREC_Bact.Sp 6206.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/3ddb1563-dce8-449a-af0d-a1c5399d1a2c___YLCV_GCREC 2201.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_healthy/6d0a4eb6-2a48-4fd6-9bb5-df05eeeb05a8___GH_HL Leaf 316.2.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato_Leaf_Mold/bf1b824c-7a99-45a5-9b60-5da58b3fe47c___Crnl_L.Mold 8759.JPG,tomato,leaf_mold,1,9,Tomato - Leaf Mold
+Datasets/Tomato_Septoria_leaf_spot/0b4886e5-a065-44c1-aa19-bd166922d3de___JR_Sept.L.S 8498.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato_healthy/787fe2db-da4f-4655-bbb7-6fd8025feffe___RS_HL 9795.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/8e52165c-b07a-4820-839c-4f9aa5d32771___YLCV_NREC 2109.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Potato___healthy/2d98cbc8-cbe6-423c-b2ab-3f7f8bcea5d5___RS_HL 1945.JPG,potato,healthy,0,2,Potato - Healthy
+Datasets/Tomato_Septoria_leaf_spot/7df39eb0-7372-4386-a09f-d04e446296da___Keller.St_CG 1783.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato_Bacterial_spot/7b40e020-e33c-4e9f-8093-d7593b8340dc___GCREC_Bact.Sp 3348.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/71a9f997-ccd8-476b-82a3-d9aa733c4a1d___UF.GRC_YLCV_Lab 02817.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/149ee994-9015-411b-a57f-bc22e8690615___YLCV_GCREC 2193.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Tomato_mosaic_virus/119554ae-c777-46da-abb7-591404fdc65f___PSU_CG 2393.JPG,tomato,mosaic_virus,1,14,Tomato - Mosaic Virus
+Datasets/Pepper__bell___healthy/0c93ef1a-ccc8-4a62-9353-308e7da3ac3e___JR_HL 8245.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato_Bacterial_spot/7791a7b8-52b2-42fa-8aee-71fcae8d9ee4___GCREC_Bact.Sp 6374.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/2c3edf31-5e58-4122-a909-be004063db57___Com.G_SpM_FL 8839.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/52f9209f-48d2-4d2b-8c3a-fe03d217d581___Com.G_SpM_FL 8934.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Bacterial_spot/87946145-3625-4e66-8570-c7c0d2c4a388___UF.GRC_BS_Lab Leaf 1148.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Leaf_Mold/32902cc7-5db6-4148-8b4e-0d04199edd98___Crnl_L.Mold 6766.JPG,tomato,leaf_mold,1,9,Tomato - Leaf Mold
+Datasets/Potato___Late_blight/e19d0007-3013-419d-a46a-0b1919f05cc4___RS_LB 4057.JPG,potato,late_blight,1,4,Potato - Late Blight
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/0f4001ae-9a28-4263-9eb1-1028ecbcd312___YLCV_NREC 2322.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Potato___Late_blight/2ef5c4f6-a798-40fd-8380-f444f3290987___RS_LB 4428.JPG,potato,late_blight,1,4,Potato - Late Blight
+Datasets/Tomato_Early_blight/6797ee0c-20a8-4a39-ab57-f65eb9c57885___RS_Erly.B 7647.JPG,tomato,early_blight,1,7,Tomato - Early Blight
+Datasets/Tomato_healthy/fe0b76dc-4263-4cda-8840-310ebe72a432___GH_HL Leaf 490.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/0a85f197-fa0e-4665-be11-d52e84a45878___UF.GRC_YLCV_Lab 02732.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/0861ef6a-5758-45d5-8e15-1d1c814d8ed5___UF.GRC_YLCV_Lab 09591.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/00bc7858-1dca-4bfb-a828-225f03bd72a5___Com.G_SpM_FL 9455.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Pepper__bell___Bacterial_spot/01613cd0-d3cd-4e96-945c-a312002037bf___JR_B.Spot 3262.JPG,pepper,bacterial_spot,1,1,Pepper - Bacterial Spot
+Datasets/Tomato_Leaf_Mold/bee64636-a53b-4ecd-9f4f-d71d61148f55___Crnl_L.Mold 8980.JPG,tomato,leaf_mold,1,9,Tomato - Leaf Mold
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/7346096e-9edb-48c3-a45d-65930d45c3ba___Com.G_SpM_FL 8876.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Potato___Late_blight/eb5ff6de-b988-42d7-87bf-374a4b938af9___RS_LB 4234.JPG,potato,late_blight,1,4,Potato - Late Blight
+Datasets/Tomato__Target_Spot/a992283a-d489-4622-b90d-aef3b7e30811___Com.G_TgS_FL 9969.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Pepper__bell___healthy/53b71f64-417e-4fef-85c9-31a60424b6f0___JR_HL 8300.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato_Late_blight/78863d29-72bb-494d-8f05-c5648130283f___GHLB2 Leaf 9112.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Potato___Late_blight/ae20cc4e-fe37-48f0-9566-2d2efc5afd38___RS_LB 4290.JPG,potato,late_blight,1,4,Potato - Late Blight
+Datasets/Tomato__Target_Spot/8dd3f665-f683-427d-9435-2e62a2650cfd___Com.G_TgS_FL 9879.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/6fa294d9-4e43-45de-9746-1f8099b72a76___YLCV_GCREC 2658.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Septoria_leaf_spot/4957b1d6-18b7-40eb-b3e7-1b509ee2e1f9___JR_Sept.L.S 8356.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/35202b83-2f96-4be4-b344-ccd79e966605___YLCV_NREC 2334.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Septoria_leaf_spot/6ff464c8-6ac2-451e-99e4-6135aecf869d___JR_Sept.L.S 8392.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato_Bacterial_spot/02fd4e60-db82-441c-87f6-08de768a4462___GCREC_Bact.Sp 5547.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_healthy/bd4111eb-69bf-44b7-b02c-13477b5dc8e1___GH_HL Leaf 357.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato_Septoria_leaf_spot/a4bba0de-ed14-417b-9080-5aabf9c5d451___JR_Sept.L.S 8401.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/5f2aaa59-4a61-4dde-bd0a-cc5d414d8d1a___UF.GRC_YLCV_Lab 02611.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/90c510c8-2026-4087-9243-2775a6109ff9___YLCV_NREC 2409.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_healthy/99fcb52b-0e4f-47a6-b350-1d49d26bc649___GH_HL Leaf 298.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Potato___Early_blight/e57ca76e-a4c3-40f2-a673-9f48b3b357ae___RS_Early.B 7539.JPG,potato,early_blight,1,3,Potato - Early Blight
+Datasets/Tomato_healthy/adb15e56-fb9c-4b1f-aae1-4ec8bedecd1b___RS_HL 9712.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato_Late_blight/cac3a565-799f-4b66-a575-5ad6ff356d37___GHLB_PS Leaf 2.3 Day 8.jpg,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato__Target_Spot/429b6c87-4263-4e24-a10f-8d3be0fc6ebe___Com.G_TgS_FL 8262.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Pepper__bell___Bacterial_spot/a326fc1a-66ff-4ca1-b19c-2ce6cb760cd9___JR_B.Spot 9011.JPG,pepper,bacterial_spot,1,1,Pepper - Bacterial Spot
+Datasets/Pepper__bell___healthy/858475a8-dc6d-432d-862a-1a982f482c8e___JR_HL 5912.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato_Bacterial_spot/bf5a66b5-5d94-4bd1-a01a-a789ff7a516e___GCREC_Bact.Sp 3389.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_healthy/0c3eaf2d-8203-441d-9248-1c64e00b5b8b___RS_HL 0018.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/4eddf593-328e-4e17-8ca8-d7ac48c67659___YLCV_GCREC 5457.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Target_Spot/19f500f4-67a4-48ab-ba8d-e9cebbc5352d___Com.G_TgS_FL 7897.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato_Bacterial_spot/ee6e4597-cc98-4966-a9e9-bd6a4a76ea97___GCREC_Bact.Sp 3491.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Early_blight/389a93c4-2ea1-4df5-94c6-01ea8ad856db___RS_Erly.B 7720.JPG,tomato,early_blight,1,7,Tomato - Early Blight
+Datasets/Potato___Early_blight/8da2d8a3-159e-48eb-9ae6-fd82bdb22d5d___RS_Early.B 6923.JPG,potato,early_blight,1,3,Potato - Early Blight
+Datasets/Potato___Late_blight/4bccc3ae-4246-48f8-9c07-f4a1d5856314___RS_LB 2760.JPG,potato,late_blight,1,4,Potato - Late Blight
+Datasets/Tomato_healthy/8558f71b-626f-40f3-863d-69493941f829___RS_HL 0044.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Pepper__bell___healthy/ac622215-8fc3-4ee8-82d5-f07620016c84___JR_HL 8424.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato_Leaf_Mold/7f3c64bd-1c01-4e6e-b794-6f9c2a5e2ba9___Crnl_L.Mold 6760.JPG,tomato,leaf_mold,1,9,Tomato - Leaf Mold
+Datasets/Tomato_Bacterial_spot/4a2b419c-69a8-4eb0-9802-15d7feffe59f___GCREC_Bact.Sp 3821.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/3156e176-2697-4be0-8cc7-37ce05aade4b___Com.G_SpM_FL 1431.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Septoria_leaf_spot/e4f68173-6553-492a-a810-77e2081c314e___JR_Sept.L.S 2658.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Pepper__bell___Bacterial_spot/cc74b411-3662-41cf-9764-517ddfa1e913___NREC_B.Spot 1955.JPG,pepper,bacterial_spot,1,1,Pepper - Bacterial Spot
+Datasets/Tomato_Bacterial_spot/86561a43-33f2-4e52-bd0f-a6ed767feef6___GCREC_Bact.Sp 6255.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Pepper__bell___healthy/f86dcb0b-6f47-417d-abd9-096cb68a8cb5___JR_HL 7759.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Potato___Early_blight/bd4c7de8-0616-45d4-a060-54b8329a9462___RS_Early.B 6902.JPG,potato,early_blight,1,3,Potato - Early Blight
+Datasets/Pepper__bell___healthy/9439a69a-66c9-48cc-8030-7ac35a92e2a2___JR_HL 8577.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato_Septoria_leaf_spot/b5cdcab0-075d-4861-9b0d-a98c88d56f58___JR_Sept.L.S 2699.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Pepper__bell___healthy/6c0c92fd-591b-4ecf-90b0-0eec3513dce3___JR_HL 8788.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato_Septoria_leaf_spot/698e8882-1c94-496e-a920-1cfbf5bb25ae___JR_Sept.L.S 2666.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato_Late_blight/e927308b-cd4a-4ff5-9654-218a6030e4a1___GHLB2 Leaf 8725.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Late_blight/87f47869-cd63-494b-813d-4355a11c01d5___RS_Late.B 6629.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Pepper__bell___healthy/95c1d651-27ca-49cd-95f9-fa7a42a14d49___JR_HL 8221.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/78e06baf-ac17-4ec7-83b3-7fcc70a5ca29___UF.GRC_YLCV_Lab 09394.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Bacterial_spot/5a43dabd-d732-4fe5-bd01-1d23f4a41d5e___GCREC_Bact.Sp 6389.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Early_blight/3596fc7f-e79e-44f5-862a-f177db2960f6___RS_Erly.B 6386.JPG,tomato,early_blight,1,7,Tomato - Early Blight
+Datasets/Tomato_Septoria_leaf_spot/5f7491e4-9eff-428c-a20d-06717a46e6a6___Matt.S_CG 7396.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Potato___Early_blight/59676e33-8884-4359-83d9-e07df07f31a1___RS_Early.B 7041.JPG,potato,early_blight,1,3,Potato - Early Blight
+Datasets/Potato___Late_blight/cf2e3e15-2284-474a-a36a-b102aa7d50cc___RS_LB 4760.JPG,potato,late_blight,1,4,Potato - Late Blight
+Datasets/Tomato_Early_blight/9cb2abac-0c5b-4b49-ad84-d97805de271c___RS_Erly.B 7457.JPG,tomato,early_blight,1,7,Tomato - Early Blight
+Datasets/Tomato_Septoria_leaf_spot/cd2cd0c6-bf72-4bfb-9647-58f5358638d4___Matt.S_CG 6020.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato_Bacterial_spot/90658246-1e73-4771-942c-17722d5e4634___GCREC_Bact.Sp 2967.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/16702cbf-3fa3-488e-9968-6dcf22d6caaf___UF.GRC_YLCV_Lab 01700.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Late_blight/89d2801e-6359-4079-a4c2-0df4718d7800___GHLB_PS Leaf 1 Day 8.jpg,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Late_blight/1c8bf271-8455-42f5-8e9f-8a92418116f9___GHLB2 Leaf 9066.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Pepper__bell___Bacterial_spot/f2c48f6c-f92e-4543-816c-0621648003fe___JR_B.Spot 9010.JPG,pepper,bacterial_spot,1,1,Pepper - Bacterial Spot
+Datasets/Tomato__Tomato_mosaic_virus/7dd798aa-f748-4ac3-9f6d-d4ced4a27403___PSU_CG 2374.JPG,tomato,mosaic_virus,1,14,Tomato - Mosaic Virus
+Datasets/Tomato_healthy/07cb5416-a029-467f-a306-252c2a64d2e6___RS_HL 0543.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato_Early_blight/671586ac-ff93-4825-b6a5-4b7bc7cbbff2___RS_Erly.B 9531.JPG,tomato,early_blight,1,7,Tomato - Early Blight
+Datasets/Tomato_Early_blight/e468b44a-912b-4e7f-9383-41050a5d421b___RS_Erly.B 8445.JPG,tomato,early_blight,1,7,Tomato - Early Blight
+Datasets/Tomato_Septoria_leaf_spot/253ddc99-8132-4710-bb89-eb83ab271abc___Matt.S_CG 0698.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato_Bacterial_spot/a7af4903-9aae-45be-990d-adfca4510cfa___GCREC_Bact.Sp 5872.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_healthy/f7df2411-8e50-46e1-b43a-cca357bee1af___GH_HL Leaf 521.1.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Tomato__Target_Spot/ca7de317-7f03-4223-a880-b4e37f5be25a___Com.G_TgS_FL 8203.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato__Target_Spot/aa35a155-f269-4c73-8801-3039370eeba5___Com.G_TgS_FL 9912.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/1e903e25-34b2-4207-94ed-f862a632a88a___YLCV_NREC 2158.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Late_blight/151c010a-021f-459d-a456-63ebaf19b2d5___GHLB2 Leaf 9104.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Potato___Late_blight/990428a4-bfa8-450d-a755-fade1df0a214___RS_LB 4082.JPG,potato,late_blight,1,4,Potato - Late Blight
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/2c661797-977f-4d09-bbad-ef4ee501498e___UF.GRC_YLCV_Lab 02466.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Pepper__bell___Bacterial_spot/9b6eb8ee-3365-49e7-aa5c-b988cc726923___NREC_B.Spot 1792.JPG,pepper,bacterial_spot,1,1,Pepper - Bacterial Spot
+Datasets/Pepper__bell___healthy/d37f4830-1504-4052-b4ec-501d170d3e83___JR_HL 8107.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato__Target_Spot/babed586-ddef-4d50-9e09-b5153eda0aaf___Com.G_TgS_FL 0051.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato_Bacterial_spot/484ce1a5-f249-43ed-afb7-9cd7c2173e29___GCREC_Bact.Sp 3596.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Early_blight/e7d248e4-a5e5-431f-9061-6383c14d8526___RS_Erly.B 7426.JPG,tomato,early_blight,1,7,Tomato - Early Blight
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/0a0fe942-bb9e-4384-8466-779017d00bcf___UF.GRC_YLCV_Lab 02192.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Bacterial_spot/2a377230-f904-4646-95da-76e242051242___GCREC_Bact.Sp 3085.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Late_blight/45472e0c-7abb-48eb-aab6-8a1b612839eb___GHLB2 Leaf 8962.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Bacterial_spot/7a267eba-0898-4396-8df8-2434795bdf9b___GCREC_Bact.Sp 5879.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/a5c94846-a321-407d-b2d9-b29d18e24911___Com.G_SpM_FL 1555.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Leaf_Mold/e7e687ae-c2f1-4ab4-9726-fe9ee5c1c889___Crnl_L.Mold 8765.JPG,tomato,leaf_mold,1,9,Tomato - Leaf Mold
+Datasets/Tomato_Late_blight/51c47d39-74a9-46d4-be22-05b9c5a16eae___RS_Late.B 5557.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Pepper__bell___Bacterial_spot/0f72db9c-d635-4415-9781-68937328aed2___NREC_B.Spot 9188.JPG,pepper,bacterial_spot,1,1,Pepper - Bacterial Spot
+Datasets/Potato___Early_blight/0e0a1b51-f61c-4934-bc57-a820af1faacb___RS_Early.B 7147.JPG,potato,early_blight,1,3,Potato - Early Blight
+Datasets/Tomato_Late_blight/f843c76c-a7d4-4031-abe2-9245602fbb15___GHLB_PS Leaf 49.1 Day 18.jpg,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/35d0ae49-02c5-402a-9c78-16aebc1821ad___YLCV_NREC 2746.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Target_Spot/7393add5-2fd1-4fae-8b2f-44770dc56a69___Com.G_TgS_FL 9719.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato_Septoria_leaf_spot/d2871bcd-6d69-4d4f-be2a-b11648666d55___Keller.St_CG 2015.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Pepper__bell___healthy/3c9b066f-f4c0-4060-8d3b-e303d2262d73___JR_HL 7947.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato__Target_Spot/47447629-2229-4b3a-97bb-45deb6f71a87___Com.G_TgS_FL 8254.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/fe791e06-a48b-4967-99e9-083d18d0d91c___Com.G_SpM_FL 8761.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Septoria_leaf_spot/b9e8cc21-e046-44a4-a393-a6c2190cc022___JR_Sept.L.S 2511.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Pepper__bell___healthy/683ad8ea-9475-4351-b419-3b2bf6cdc026___JR_HL 8363.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato_Bacterial_spot/4ceb9395-b11a-4290-bfc4-db6afe8ad21e___UF.GRC_BS_Lab Leaf 0806.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/eecf1b41-1c1f-4bdb-9d63-795842cc83e2___Com.G_SpM_FL 1771.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Bacterial_spot/de0d63c7-a1a2-43e0-9316-44381a5cb46a___GCREC_Bact.Sp 3858.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Pepper__bell___healthy/8d9192a6-0211-4f07-8b51-5c99e7217f56___JR_HL 7944.JPG,pepper,healthy,0,0,Pepper - Healthy
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/9635519a-297b-4635-94fe-7fc2fbf21705___YLCV_GCREC 2576.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/360025d6-95c9-4c88-b6a0-dee5f3a215f9___UF.GRC_YLCV_Lab 08546.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/d13222ac-55e3-4dd5-b46f-e3ec0eafff41___Com.G_SpM_FL 8808.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Pepper__bell___Bacterial_spot/6fc860ea-46cd-4b40-8d53-27c1ebf95935___NREC_B.Spot 1836.JPG,pepper,bacterial_spot,1,1,Pepper - Bacterial Spot
+Datasets/Tomato_healthy/509601a4-652c-4666-bb90-44e4a6d98062___RS_HL 9764.JPG,tomato,healthy,0,5,Tomato - Healthy
+Datasets/Potato___Early_blight/8bcbd0ab-e530-4b6c-83a2-e0c649abbdaf___RS_Early.B 6676.JPG,potato,early_blight,1,3,Potato - Early Blight
+Datasets/Tomato_Septoria_leaf_spot/740caf75-7903-44ec-ac47-c8a684736c8a___Keller.St_CG 2005.JPG,tomato,septoria_leaf_spot,1,10,Tomato - Septoria Leaf Spot
+Datasets/Tomato__Target_Spot/c481f313-7b97-4423-8cfa-233e5ce316db___Com.G_TgS_FL 0833.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato_Late_blight/44728e89-49f7-435e-b4d9-a64a7a3f2317___RS_Late.B 7116.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Late_blight/b9acddbe-1fc4-44a8-9802-91f0d9f57e22___RS_Late.B 5026.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Leaf_Mold/c2c1d52c-c090-4399-ba9c-4f1597bfe900___Crnl_L.Mold 6989.JPG,tomato,leaf_mold,1,9,Tomato - Leaf Mold
+Datasets/Tomato_Late_blight/9f28c915-c41b-41d7-a9d4-f3620cd9360f___GHLB2 Leaf 8728.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Early_blight/22742bf8-7e7f-41cc-bf74-5fe80d6cf0cd___RS_Erly.B 6370.JPG,tomato,early_blight,1,7,Tomato - Early Blight
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/29542c65-1d9d-4f02-9fac-332f8c81138c___YLCV_GCREC 2245.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus
+Datasets/Tomato__Tomato_mosaic_virus/76d665fa-6aec-4c47-adac-069107b3cf46___PSU_CG 2268.JPG,tomato,mosaic_virus,1,14,Tomato - Mosaic Virus
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/06e43f45-f56b-4979-b4a3-10eafeaddf3e___Com.G_SpM_FL 9534.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato_Leaf_Mold/17ea3930-bd36-4e02-8bef-91511c6a716e___Crnl_L.Mold 6862.JPG,tomato,leaf_mold,1,9,Tomato - Leaf Mold
+Datasets/Potato___Early_blight/ec9ea109-34c7-48c5-bbac-40a36b21fa05___RS_Early.B 8761.JPG,potato,early_blight,1,3,Potato - Early Blight
+Datasets/Tomato__Target_Spot/007ec913-8cfe-43ed-b458-f041a17266ae___Com.G_TgS_FL 9844.JPG,tomato,target_spot,1,12,Tomato - Target Spot
+Datasets/Tomato_Late_blight/eb7dd120-4002-4c01-a06a-1b32ad93a7a3___GHLB2 Leaf 9110.JPG,tomato,late_blight,1,8,Tomato - Late Blight
+Datasets/Tomato_Bacterial_spot/9a1bfa95-467f-4bf4-8595-d19c63012558___GCREC_Bact.Sp 6268.JPG,tomato,bacterial_spot,1,6,Tomato - Bacterial Spot
+Datasets/Tomato_Early_blight/553d53a5-19f3-433e-9805-d3bf5a3804b1___RS_Erly.B 7580.JPG,tomato,early_blight,1,7,Tomato - Early Blight
+Datasets/Tomato_Spider_mites_Two_spotted_spider_mite/61563795-d070-46c1-99ad-2ed3cde171f7___Com.G_SpM_FL 9556.JPG,tomato,spider_mites,1,11,Tomato - Spider Mites
+Datasets/Tomato__Tomato_YellowLeaf__Curl_Virus/4076ca17-4ef4-4d2c-bfd9-9b7fd88e358a___UF.GRC_YLCV_Lab 02880.JPG,tomato,yellow_leaf_curl,1,13,Tomato - Yellow Leaf Curl Virus

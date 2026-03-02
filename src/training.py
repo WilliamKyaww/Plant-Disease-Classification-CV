@@ -1,5 +1,6 @@
 import time
 import copy
+from contextlib import nullcontext
 import torch
 import torch.nn as nn
 from tqdm import tqdm
@@ -7,7 +8,8 @@ from tqdm import tqdm
 # Train model with validation tracking and optional early stopping
 def train_model(model, criterion, optimizer, train_loader, val_loader,
                 num_epochs: int = 10, device: str = "cpu",
-                scheduler=None, early_stop_patience: int = 0):
+                scheduler=None, early_stop_patience: int = 0,
+                use_amp: bool = False):
     
     since = time.time()
 
@@ -22,6 +24,13 @@ def train_model(model, criterion, optimizer, train_loader, val_loader,
         "val_acc": [],
         "lr": [],
     }
+
+    device_str = str(device)
+    amp_enabled = bool(use_amp and torch.cuda.is_available() and device_str.startswith("cuda"))
+    if hasattr(torch, "amp") and hasattr(torch.amp, "GradScaler"):
+        scaler = torch.amp.GradScaler("cuda", enabled=amp_enabled)
+    else:
+        scaler = torch.cuda.amp.GradScaler(enabled=amp_enabled)
 
     for epoch in range(num_epochs):
         print(f"\nEpoch {epoch + 1}/{num_epochs}")
@@ -48,13 +57,20 @@ def train_model(model, criterion, optimizer, train_loader, val_loader,
                 optimizer.zero_grad()
 
                 with torch.set_grad_enabled(phase == "train"):
-                    outputs = model(inputs)
-                    loss = criterion(outputs, labels)
-                    _, preds = torch.max(outputs, 1)
+                    amp_ctx = torch.autocast(device_type="cuda", enabled=amp_enabled) if amp_enabled else nullcontext()
+                    with amp_ctx:
+                        outputs = model(inputs)
+                        loss = criterion(outputs, labels)
+                        _, preds = torch.max(outputs, 1)
 
                     if phase == "train":
-                        loss.backward()
-                        optimizer.step()
+                        if amp_enabled:
+                            scaler.scale(loss).backward()
+                            scaler.step(optimizer)
+                            scaler.update()
+                        else:
+                            loss.backward()
+                            optimizer.step()
 
                 batch_size = inputs.size(0)
                 running_loss += loss.item() * batch_size

@@ -29,9 +29,11 @@ try:
         count_trainable_parameters,
         is_vit_model,
     )
+    from src.phase2_reporting import write_phase2_summary
+    from src.split_guard import resolve_project_path, validate_frozen_splits
     from src.training import evaluate_model, save_model, train_model
     from src.transforms import get_train_transform, get_val_transform
-    from src.utils import CLASS_NAMES, NUM_CLASSES, PROJECT_ROOT, RESULTS_DIR, set_seed, get_device
+    from src.utils import CLASS_NAMES, NUM_CLASSES, PROJECT_ROOT, set_seed, get_device
 except ImportError:
     from .datasets import create_dataloaders
     from .experiment_log import ExperimentLog, sha256_file, to_project_relative
@@ -42,19 +44,15 @@ except ImportError:
         count_trainable_parameters,
         is_vit_model,
     )
+    from .phase2_reporting import write_phase2_summary
+    from .split_guard import resolve_project_path, validate_frozen_splits
     from .training import evaluate_model, save_model, train_model
     from .transforms import get_train_transform, get_val_transform
-    from .utils import CLASS_NAMES, NUM_CLASSES, PROJECT_ROOT, RESULTS_DIR, set_seed, get_device
+    from .utils import CLASS_NAMES, NUM_CLASSES, PROJECT_ROOT, set_seed, get_device
 
 
 def _parse_csv_list(value: str) -> list[str]:
     return [v.strip() for v in value.split(",") if v.strip()]
-
-
-def _resolve_project_path(path: str) -> str:
-    if os.path.isabs(path):
-        return path
-    return os.path.join(PROJECT_ROOT, path)
 
 
 def _inverse_frequency_class_weights(
@@ -82,6 +80,63 @@ def _inverse_frequency_class_weights(
     return tensor, [float(v) for v in tensor.detach().cpu().tolist()]
 
 
+def _sample_split(df: pd.DataFrame, n_max: int, seed: int, label_column: str) -> pd.DataFrame:
+    if n_max <= 0 or len(df) <= n_max:
+        return df.copy().reset_index(drop=True)
+
+    sampled_parts = []
+    for _, group in df.groupby(label_column):
+        frac = len(group) / len(df)
+        take = max(1, int(round(frac * n_max)))
+        sampled_parts.append(group.sample(n=min(take, len(group)), random_state=seed))
+
+    sampled = pd.concat(sampled_parts, axis=0).sample(frac=1.0, random_state=seed)
+    if len(sampled) > n_max:
+        sampled = sampled.sample(n=n_max, random_state=seed)
+    return sampled.reset_index(drop=True)
+
+
+def _prepare_split_paths_for_seed(
+    split_paths: dict,
+    label_column: str,
+    seed: int,
+    out_dir: str,
+    max_train: int = 0,
+    max_val: int = 0,
+    max_test: int = 0,
+) -> tuple[dict, dict]:
+    """
+    Return split paths for this seed.
+    If max_* values are > 0, sampled CSVs are generated and returned.
+    """
+    if max_train <= 0 and max_val <= 0 and max_test <= 0:
+        row_counts = {
+            "train": int(len(pd.read_csv(split_paths["train"]))),
+            "val": int(len(pd.read_csv(split_paths["val"]))),
+            "test": int(len(pd.read_csv(split_paths["test"]))),
+        }
+        return split_paths, row_counts
+
+    sample_dir = os.path.join(out_dir, "sample_splits", f"seed_{seed}")
+    os.makedirs(sample_dir, exist_ok=True)
+    sampled_paths = {}
+    row_counts = {}
+
+    for split_name, n_max in (
+        ("train", max_train),
+        ("val", max_val),
+        ("test", max_test),
+    ):
+        df = pd.read_csv(split_paths[split_name])
+        sampled = _sample_split(df, n_max=n_max, seed=seed, label_column=label_column)
+        sampled_path = os.path.join(sample_dir, f"{split_name}.csv")
+        sampled.to_csv(sampled_path, index=False)
+        sampled_paths[split_name] = sampled_path
+        row_counts[split_name] = int(len(sampled))
+
+    return sampled_paths, row_counts
+
+
 def _build_scheduler(
     scheduler_name: str,
     optimizer,
@@ -103,39 +158,6 @@ def _build_scheduler(
 
 def _select_learning_rate(model_name: str, lr_cnn: float, lr_vit: float) -> float:
     return lr_vit if is_vit_model(model_name) else lr_cnn
-
-
-def _validate_frozen_splits(manifest_path: str) -> dict:
-    if not os.path.exists(manifest_path):
-        raise FileNotFoundError(f"Split manifest not found: {manifest_path}")
-
-    with open(manifest_path, "r", encoding="utf-8") as f:
-        manifest = json.load(f)
-
-    split_paths = {}
-    for split_name in ("train", "val", "test"):
-        split_info = manifest.get("splits", {}).get(split_name, {})
-        rel_path = split_info.get("path")
-        expected_sha = split_info.get("sha256")
-        if not rel_path or not expected_sha:
-            raise ValueError(f"Manifest missing path/sha256 for split '{split_name}'.")
-
-        abs_path = _resolve_project_path(rel_path)
-        if not os.path.exists(abs_path):
-            raise FileNotFoundError(f"Split CSV missing: {abs_path}")
-
-        observed_sha = sha256_file(abs_path)
-        if observed_sha != expected_sha:
-            raise ValueError(
-                f"Split hash mismatch for '{split_name}'. "
-                f"expected={expected_sha}, observed={observed_sha}"
-            )
-        split_paths[split_name] = abs_path
-
-    manifest["manifest_sha256"] = sha256_file(manifest_path)
-    manifest["manifest_path_abs"] = manifest_path
-    manifest["split_paths_abs"] = split_paths
-    return manifest
 
 
 def _write_json(path: str, payload: dict):
@@ -219,6 +241,24 @@ def _run_benchmark(args, models: list[str], split_paths: dict, out_dir: str, man
     device = get_device()
     label_column = "class_label"
     run_rows = []
+    split_paths_by_seed = {}
+
+    # Build split paths once per seed so every architecture uses identical files.
+    for seed in args.seeds:
+        seed_split_paths, sampled_row_counts = _prepare_split_paths_for_seed(
+            split_paths=split_paths,
+            label_column=label_column,
+            seed=seed,
+            out_dir=out_dir,
+            max_train=args.max_train,
+            max_val=args.max_val,
+            max_test=args.max_test,
+        )
+        split_paths_by_seed[seed] = {
+            "paths": seed_split_paths,
+            "row_counts": sampled_row_counts,
+            "sha256": {k: sha256_file(v) for k, v in seed_split_paths.items()},
+        }
 
     for model_name in models:
         model_folder = os.path.join(out_dir, "runs", model_name)
@@ -233,11 +273,15 @@ def _run_benchmark(args, models: list[str], split_paths: dict, out_dir: str, man
 
             os.makedirs(run_dir, exist_ok=True)
             set_seed(seed)
+            run_split_info = split_paths_by_seed[seed]
+            run_split_paths = run_split_info["paths"]
+            sampled_row_counts = run_split_info["row_counts"]
+            split_hashes = run_split_info["sha256"]
 
             train_loader, val_loader, test_loader = create_dataloaders(
-                train_csv=split_paths["train"],
-                val_csv=split_paths["val"],
-                test_csv=split_paths["test"],
+                train_csv=run_split_paths["train"],
+                val_csv=run_split_paths["val"],
+                test_csv=run_split_paths["test"],
                 train_transform=get_train_transform(),
                 val_transform=get_val_transform(),
                 label_column=label_column,
@@ -253,7 +297,7 @@ def _run_benchmark(args, models: list[str], split_paths: dict, out_dir: str, man
             class_weights_values = None
             if args.class_weighting == "inverse_frequency":
                 class_weights_tensor, class_weights_values = _inverse_frequency_class_weights(
-                    train_csv_path=split_paths["train"],
+                    train_csv_path=run_split_paths["train"],
                     label_column=label_column,
                     num_classes=NUM_CLASSES,
                     device=device,
@@ -287,6 +331,7 @@ def _run_benchmark(args, models: list[str], split_paths: dict, out_dir: str, man
                 device=device,
                 scheduler=scheduler,
                 early_stop_patience=args.patience,
+                use_amp=args.amp,
             )
             labels, preds, _ = evaluate_model(model, test_loader, device=device)
             elapsed_sec = time.perf_counter() - t0
@@ -311,6 +356,7 @@ def _run_benchmark(args, models: list[str], split_paths: dict, out_dir: str, man
                 "best.pth",
             )
             save_model(model, checkpoint_path)
+            checkpoint_size_bytes = int(os.path.getsize(checkpoint_path))
 
             cm_json_path = os.path.join(run_dir, "confusion_matrix.json")
             cm_png_path = os.path.join(run_dir, "confusion_matrix.png")
@@ -343,14 +389,22 @@ def _run_benchmark(args, models: list[str], split_paths: dict, out_dir: str, man
                 "class_weights": class_weights_values,
                 "pretrained": args.pretrained,
                 "amp_requested": args.amp,
+                "amp_active": bool(args.amp and str(device).startswith("cuda")),
                 "device": str(device),
                 "train_samples": int(len(train_loader.dataset)),
                 "val_samples": int(len(val_loader.dataset)),
                 "test_samples": int(len(test_loader.dataset)),
+                "sampled_row_counts": sampled_row_counts,
+                "split_hashes": split_hashes,
+                "source_split_paths": {
+                    k: to_project_relative(v, repo_dir=PROJECT_ROOT)
+                    for k, v in run_split_paths.items()
+                },
                 "test_accuracy": test_acc,
                 "test_f1_macro": test_f1_macro,
                 "elapsed_seconds": float(elapsed_sec),
                 "trainable_params": int(count_trainable_parameters(model)),
+                "model_size_bytes": checkpoint_size_bytes,
                 "manifest_path": to_project_relative(
                     manifest["manifest_path_abs"], repo_dir=PROJECT_ROOT
                 ),
@@ -377,12 +431,13 @@ def _run_benchmark(args, models: list[str], split_paths: dict, out_dir: str, man
                 class_weights=class_weights_values,
                 pretrained=args.pretrained,
                 amp_requested=args.amp,
+                amp_active=bool(args.amp and str(device).startswith("cuda")),
             )
             log.set_notes("Phase 2 benchmark run")
             log.set_environment()
             log.set_git_commit(repo_dir=PROJECT_ROOT)
             log.set_split_artifacts(
-                split_paths=split_paths,
+                split_paths=run_split_paths,
                 seed=int(manifest.get("seed", 42)),
                 label_column=label_column,
                 repo_dir=PROJECT_ROOT,
@@ -411,6 +466,7 @@ def _run_benchmark(args, models: list[str], split_paths: dict, out_dir: str, man
                     "test_f1_macro": test_f1_macro,
                     "elapsed_seconds": float(elapsed_sec),
                     "trainable_params": int(count_trainable_parameters(model)),
+                    "model_size_bytes": checkpoint_size_bytes,
                     "metrics_path": to_project_relative(metrics_path, repo_dir=PROJECT_ROOT),
                 }
             )
@@ -419,34 +475,10 @@ def _run_benchmark(args, models: list[str], split_paths: dict, out_dir: str, man
         print("No new runs executed.")
         return
 
-    df = pd.DataFrame(run_rows)
-    model_seed_csv = os.path.join(out_dir, "model_seed_metrics.csv")
-    df.to_csv(model_seed_csv, index=False)
-
-    summary = (
-        df.groupby("model")
-        .agg(
-            accuracy_mean=("test_accuracy", "mean"),
-            accuracy_std=("test_accuracy", "std"),
-            f1_macro_mean=("test_f1_macro", "mean"),
-            f1_macro_std=("test_f1_macro", "std"),
-            elapsed_mean_sec=("elapsed_seconds", "mean"),
-            elapsed_std_sec=("elapsed_seconds", "std"),
-            params=("trainable_params", "max"),
-            runs=("seed", "count"),
-        )
-        .reset_index()
-    )
-    summary_csv = os.path.join(out_dir, "model_summary_mean_std.csv")
-    summary.to_csv(summary_csv, index=False)
-
-    leaderboard = summary.sort_values("f1_macro_mean", ascending=False).reset_index(drop=True)
-    leaderboard_csv = os.path.join(out_dir, "leaderboard.csv")
-    leaderboard.to_csv(leaderboard_csv, index=False)
-
-    print(f"Saved: {model_seed_csv}")
-    print(f"Saved: {summary_csv}")
-    print(f"Saved: {leaderboard_csv}")
+    paths = write_phase2_summary(run_rows=run_rows, out_dir=out_dir)
+    print(f"Saved: {paths['model_seed_csv']}")
+    print(f"Saved: {paths['summary_csv']}")
+    print(f"Saved: {paths['leaderboard_csv']}")
 
 
 def parse_args():
@@ -476,7 +508,13 @@ def parse_args():
     )
     parser.add_argument("--patience", type=int, default=7)
     parser.add_argument("--num-workers", type=int, default=2)
-    parser.add_argument("--no-pretrained", action="store_true")
+    parser.add_argument("--max-train", type=int, default=0)
+    parser.add_argument("--max-val", type=int, default=0)
+    parser.add_argument("--max-test", type=int, default=0)
+    pretrained_group = parser.add_mutually_exclusive_group()
+    pretrained_group.add_argument("--pretrained", dest="pretrained", action="store_true")
+    pretrained_group.add_argument("--no-pretrained", dest="pretrained", action="store_false")
+    parser.set_defaults(pretrained=True)
     parser.add_argument("--amp", action="store_true")
     parser.add_argument(
         "--out-dir",
@@ -512,12 +550,11 @@ def main():
         raise ValueError(f"Unsupported models after canonicalization: {unsupported}")
 
     args.seeds = seed_values
-    args.pretrained = not args.no_pretrained
-    out_dir = _resolve_project_path(args.out_dir)
+    out_dir = resolve_project_path(args.out_dir, project_root=PROJECT_ROOT)
     os.makedirs(out_dir, exist_ok=True)
 
-    manifest_path = _resolve_project_path(args.manifest_path)
-    manifest = _validate_frozen_splits(manifest_path=manifest_path)
+    manifest_path = resolve_project_path(args.manifest_path, project_root=PROJECT_ROOT)
+    manifest = validate_frozen_splits(manifest_path=manifest_path, project_root=PROJECT_ROOT)
     split_paths = manifest["split_paths_abs"]
 
     print("Phase 2 configuration")
