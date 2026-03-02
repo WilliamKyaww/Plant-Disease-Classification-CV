@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-03-01T15:21:02.720678",
-  "executed_in_colab": false,
-  "repo_main": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main",
-  "git_commit": "e574fdb9c71e79cf8f276bebaea29c3ff4797c2e",
+  "timestamp": "2026-03-02T17:08:04.286805",
+  "executed_in_colab": true,
+  "repo_main": "/content/Plant-Disease-Detection-CV",
+  "git_commit": "321dd09121bb6ae833e1bb6ffe0bf42f3f2c3e61",
   "checks": [
     {
       "name": "repo_main_detected",
       "passed": true,
-      "details": "repo_main=C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main"
+      "details": "repo_main=/content/Plant-Disease-Detection-CV"
     },
     {
       "name": "cwd_set",
       "passed": true,
-      "details": "cwd=C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main"
+      "details": "cwd=/content/Plant-Disease-Detection-CV"
     },
     {
       "name": "src_folder_exists",
@@ -22,7 +22,7 @@
     {
       "name": "split_csvs_exist",
       "passed": true,
-      "details": "C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_train.csv, C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_val.csv, C:\\Users\\willi\\Documents\\GitHub\\Plant Disease Detection CV\\Main\\CSV\\plantvillage_test.csv"
+      "details": "/content/Plant-Disease-Detection-CV/CSV/plantvillage_train.csv, /content/Plant-Disease-Detection-CV/CSV/plantvillage_val.csv, /content/Plant-Disease-Detection-CV/CSV/plantvillage_test.csv"
     },
     {
       "name": "src_imports_ok",

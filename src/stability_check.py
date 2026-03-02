@@ -3,7 +3,7 @@ Repeat-run stability check for baseline smoke training.
 
 Runs baseline smoke training for multiple seeds and reports mean/std metrics.
 
-Run from Main/:
+Run from repo root:
     py -3.13 -m src.stability_check --seeds 41,42,43
 """
 

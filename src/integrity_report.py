@@ -1,7 +1,7 @@
 """
 Run dataset integrity checks and persist report artifacts (JSON + text).
 
-Run from Main/:
+Run from repo root:
     py -3.13 -m src.integrity_report
 """
 

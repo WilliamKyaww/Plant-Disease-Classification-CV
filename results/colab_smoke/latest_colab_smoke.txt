@@ -1,16 +1,16 @@
 Colab Smoke Report
 ============================================================
-Timestamp: 2026-03-01T15:21:02.720678
-Executed in Colab: False
-Repo main: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main
-Git commit: e574fdb9c71e79cf8f276bebaea29c3ff4797c2e
+Timestamp: 2026-03-02T17:08:04.286805
+Executed in Colab: True
+Repo main: /content/Plant-Disease-Detection-CV
+Git commit: 321dd09121bb6ae833e1bb6ffe0bf42f3f2c3e61
 Passed: True
 
 Checks
 ------------------------------------------------------------
-- [PASS] repo_main_detected: repo_main=C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main
-- [PASS] cwd_set: cwd=C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main
+- [PASS] repo_main_detected: repo_main=/content/Plant-Disease-Detection-CV
+- [PASS] cwd_set: cwd=/content/Plant-Disease-Detection-CV
 - [PASS] src_folder_exists: 
-- [PASS] split_csvs_exist: C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\CSV\plantvillage_train.csv, C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\CSV\plantvillage_val.csv, C:\Users\willi\Documents\GitHub\Plant Disease Detection CV\Main\CSV\plantvillage_test.csv
+- [PASS] split_csvs_exist: /content/Plant-Disease-Detection-CV/CSV/plantvillage_train.csv, /content/Plant-Disease-Detection-CV/CSV/plantvillage_val.csv, /content/Plant-Disease-Detection-CV/CSV/plantvillage_test.csv
 - [PASS] src_imports_ok: 
 - [PASS] dataset_sample_load_ok: 

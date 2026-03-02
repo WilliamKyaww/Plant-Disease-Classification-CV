@@ -5,7 +5,7 @@ Dataset integrity checks:
 - exact duplicate detection across classes (SHA256)
 - near-duplicate detection across classes (dHash Hamming distance)
 
-Run from Main/:
+Run from repo root:
     python -m src.integrity
 """
 

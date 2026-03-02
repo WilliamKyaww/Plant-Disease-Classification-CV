@@ -4,7 +4,7 @@ Colab path sanity + smoke checks with artifact output.
 This script can run in Colab or locally (with --repo-main).
 It validates repository root/imports/split CSVs and attempts one dataset sample load.
 
-Run from Main/:
+Run from repo root:
     py -3.13 -m src.colab_smoke --repo-main .
 """
 
@@ -22,6 +22,11 @@ except ImportError:
 
 def _default_candidates():
     return [
+        "/content/Plant-Disease-Detection-CV",
+        "/content/Plant Disease Detection CV",
+        "/content/drive/MyDrive/Plant-Disease-Detection-CV",
+        "/content/drive/MyDrive/Plant Disease Detection CV",
+        # Backward-compatible legacy paths:
         "/content/Plant-Disease-Detection-CV/Main",
         "/content/Plant Disease Detection CV/Main",
         "/content/drive/MyDrive/Plant-Disease-Detection-CV/Main",
@@ -159,7 +164,7 @@ def parse_args():
         "--repo-main",
         type=str,
         default=None,
-        help="Path to Main/ (optional for local/simulated execution).",
+        help="Path to repository root (optional for local/simulated execution).",
     )
     return parser.parse_args()
 

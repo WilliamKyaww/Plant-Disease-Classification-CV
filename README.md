@@ -9,7 +9,7 @@ Computer vision project for plant disease classification with reproducible train
 
 ## Repository Layout
 ```text
-Main/
+repo-root/
   src/                         Core source modules (single source of truth)
   notebooks/                   Notebook orchestration layer
     01_dataset_preparation.ipynb
@@ -30,18 +30,17 @@ Recommended local interpreter: Python 3.13 on this machine.
 
 Install:
 ```bash
-cd Main
 py -3.13 -m pip install -r requirements.txt
 ```
 
 ## Data Setup
 Place PlantVillage folders under:
-`Main/Datasets/<folder_name>/image.jpg`
+`Datasets/<folder_name>/image.jpg`
 
 Expected class folder names are defined in `src/utils.py` under `FOLDER_METADATA`.
 
 ## Phase 1 Workflow (Executable)
-Run from `Main/`:
+Run from repo root:
 
 Quick one-command runner (forces Python 3.13):
 ```bash
@@ -98,8 +97,8 @@ Generated artifacts:
 4. `04-06` are intentionally deprecated until the optional severity phase is unlocked.
 
 ## Colab Note
-`Main/Google Colab/Plant_Disease.ipynb` is context/support only.
-It now auto-detects a `Main/` repository root and imports from `src` from that location.
+`Google Colab/Plant_Disease.ipynb` is context/support only.
+It auto-detects the repository root and imports from `src` from that location.
 
 ## Reproducibility Logging
 Use `src/experiment_log.py` to record:

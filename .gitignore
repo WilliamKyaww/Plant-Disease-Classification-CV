@@ -35,7 +35,6 @@ models/*.ckpt
 # Jupyter / Python artefacts
 # ===============
 .ipynb_checkpoints/
-Google Colab/
 __pycache__/
 *.pyc
 *.pyo
@@ -86,3 +85,4 @@ results/experiment_logs/*.json
 .idea/
 .DS_Store
 Thumbs.db
+Markdown Files/

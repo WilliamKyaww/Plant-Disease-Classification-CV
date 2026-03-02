@@ -6,7 +6,7 @@ Runs a small ResNet18 training/evaluation pass and saves:
 2) metrics snapshot JSON
 3) experiment log JSON (with git commit + split manifest hash + seed)
 
-Run from Main/:
+Run from repo root:
     py -3.13 -m src.run_baseline_smoke
 """
 

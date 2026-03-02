@@ -7,7 +7,7 @@ Produces:
   CSV/plantvillage_val.csv                 (15%)
   CSV/plantvillage_test.csv                (15%)
 
-Run from Main/:
+Run from repo root:
     python -m src.prepare_splits
 """
 
