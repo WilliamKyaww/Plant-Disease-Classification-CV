@@ -1,0 +1,67 @@
+{
+  "timestamp": "2026-03-02T19:18:00.991954",
+  "dry_run": true,
+  "models": [
+    "resnet18",
+    "resnet50",
+    "efficientnet_b0",
+    "vit_small_patch16_224"
+  ],
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "epochs": 30,
+  "batch_size": 4,
+  "class_weighting": "inverse_frequency",
+  "scheduler": "cosine",
+  "pretrained": false,
+  "amp_requested": false,
+  "device": "cpu",
+  "manifest_path": "results/split_manifests/latest_split_manifest.json",
+  "manifest_sha256": "ec820e7a318f48fd468f0a0e770e756901ff768c2a98bbc4e7ac610c5ffcdfbf",
+  "split_paths": {
+    "train": "CSV/plantvillage_train.csv",
+    "val": "CSV/plantvillage_val.csv",
+    "test": "CSV/plantvillage_test.csv"
+  },
+  "model_checks": [
+    {
+      "model": "resnet18",
+      "params_trainable": 11184207,
+      "selected_lr": 0.0003,
+      "forward_shape": [
+        4,
+        15
+      ]
+    },
+    {
+      "model": "resnet50",
+      "params_trainable": 23538767,
+      "selected_lr": 0.0003,
+      "forward_shape": [
+        4,
+        15
+      ]
+    },
+    {
+      "model": "efficientnet_b0",
+      "params_trainable": 4026763,
+      "selected_lr": 0.0003,
+      "forward_shape": [
+        4,
+        15
+      ]
+    },
+    {
+      "model": "vit_small_patch16_224",
+      "params_trainable": 21671439,
+      "selected_lr": 0.0001,
+      "forward_shape": [
+        4,
+        15
+      ]
+    }
+  ]
+}
