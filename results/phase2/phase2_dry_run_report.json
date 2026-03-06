@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-02T19:54:40.508113",
+  "timestamp": "2026-03-06T20:02:29.679541",
   "dry_run": true,
   "models": [
     "resnet18",
@@ -17,10 +17,10 @@
   "class_weighting": "inverse_frequency",
   "scheduler": "cosine",
   "pretrained": false,
-  "amp_requested": false,
+  "amp_requested": true,
   "device": "cpu",
   "manifest_path": "results/split_manifests/latest_split_manifest.json",
-  "manifest_sha256": "ec820e7a318f48fd468f0a0e770e756901ff768c2a98bbc4e7ac610c5ffcdfbf",
+  "manifest_sha256": "f455a0fc6c9f5bbdabcfcbffcececc2a04ab77c8f09c97deed7d950b848b972b",
   "split_paths": {
     "train": "CSV/plantvillage_train.csv",
     "val": "CSV/plantvillage_val.csv",

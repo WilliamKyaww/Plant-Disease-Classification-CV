@@ -1,72 +1,72 @@
 {
-  "timestamp": "2026-03-02T20:05:37.934863",
+  "timestamp": "2026-03-06T21:10:45.321490",
   "model": "resnet18",
   "seed": 41,
   "epochs": 1,
-  "batch_size": 16,
+  "batch_size": 32,
   "learning_rate": 0.0003,
   "weight_decay": 0.0001,
   "scheduler": "cosine",
   "patience": 7,
   "class_weighting": "inverse_frequency",
   "class_weights": [
-    0.4525003731250763,
-    0.7038894891738892,
-    6.335005283355713,
-    0.7038894891738892,
-    0.7038894891738892,
-    0.422333687543869,
-    0.31675025820732117,
-    0.7038894891738892,
-    0.3519447445869446,
-    0.7038894891738892,
-    0.39593783020973206,
-    0.39593783020973206,
-    0.4873080849647522,
-    0.2111668437719345,
-    2.111668348312378
+    0.5389464497566223,
+    0.7991541624069214,
+    5.262354850769043,
+    0.7968708872795105,
+    0.7968708872795105,
+    0.5007267594337463,
+    0.374620258808136,
+    0.7968708872795105,
+    0.4175221621990204,
+    0.8375518918037415,
+    0.44984644651412964,
+    0.47554099559783936,
+    0.5674563646316528,
+    0.24846751987934113,
+    2.1372015476226807
   ],
-  "pretrained": false,
+  "pretrained": true,
   "amp_requested": false,
   "amp_active": false,
   "device": "cpu",
-  "train_samples": 191,
-  "val_samples": 96,
-  "test_samples": 96,
+  "train_samples": 14446,
+  "val_samples": 3096,
+  "test_samples": 3096,
   "sampled_row_counts": {
-    "train": 191,
-    "val": 96,
-    "test": 96
+    "train": 14446,
+    "val": 3096,
+    "test": 3096
   },
   "split_hashes": {
-    "train": "fda6259e76b606c000986080f50030c4d773175e04a2f018adb6b9123b328333",
-    "val": "fdb25b883074b60de3af6d6cc2e9acdad9fd540e85303c809155d990f01917cd",
-    "test": "e19bc33bc95d4bc01b653dad7838d729bc37c09ab1642de2413e8881bcd4f226"
+    "train": "908e0e0d1f4bda4384f1e3050e7a9e5ae7e55d0904a6f3b991a6aed69ed2e9d3",
+    "val": "cba29d9c92c73430c661ad38168cd9644025633f0af67e7f79ad2c412adb04f5",
+    "test": "7377cfcf78f42ba6dee73ef40cc0ad7a409c1e224a48de33d956d374bcdccf55"
   },
   "source_split_paths": {
-    "train": "results/phase2/sample_splits/seed_41/train.csv",
-    "val": "results/phase2/sample_splits/seed_41/val.csv",
-    "test": "results/phase2/sample_splits/seed_41/test.csv"
+    "train": "CSV/plantvillage_train.csv",
+    "val": "CSV/plantvillage_val.csv",
+    "test": "CSV/plantvillage_test.csv"
   },
-  "test_accuracy": 0.10416666666666667,
-  "test_f1_macro": 0.012578616352201259,
-  "elapsed_seconds": 14.31882589997258,
+  "test_accuracy": 0.912467700258398,
+  "test_f1_macro": 0.8906619287922468,
+  "elapsed_seconds": 4080.6683138589997,
   "trainable_params": 11184207,
   "model_size_bytes": 44807435,
   "manifest_path": "results/split_manifests/latest_split_manifest.json",
-  "manifest_sha256": "ec820e7a318f48fd468f0a0e770e756901ff768c2a98bbc4e7ac610c5ffcdfbf",
+  "manifest_sha256": "f455a0fc6c9f5bbdabcfcbffcececc2a04ab77c8f09c97deed7d950b848b972b",
   "history": {
     "train_loss": [
-      2.662983292684505
+      0.3280437508481667
     ],
     "val_loss": [
-      4.553021669387817
+      0.221208955428397
     ],
     "train_acc": [
-      0.2617801047120419
+      0.9010798837048318
     ],
     "val_acc": [
-      0.10416666666666667
+      0.915374677002584
     ],
     "lr": [
       0.0003
@@ -74,107 +74,107 @@
   },
   "classification_report": {
     "Pepper - Healthy": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 7.0
+      "precision": 0.9907407407407407,
+      "recall": 0.9683257918552036,
+      "f1-score": 0.9794050343249427,
+      "support": 221.0
     },
     "Pepper - Bacterial Spot": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 5.0
+      "precision": 0.9266666666666666,
+      "recall": 0.9328859060402684,
+      "f1-score": 0.9297658862876255,
+      "support": 149.0
     },
     "Potato - Healthy": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 1.0
+      "precision": 0.45098039215686275,
+      "recall": 1.0,
+      "f1-score": 0.6216216216216216,
+      "support": 23.0
     },
     "Potato - Early Blight": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 5.0
+      "precision": 0.9245283018867925,
+      "recall": 0.98,
+      "f1-score": 0.9514563106796117,
+      "support": 150.0
     },
     "Potato - Late Blight": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 4.0
+      "precision": 0.7932960893854749,
+      "recall": 0.9466666666666667,
+      "f1-score": 0.8632218844984803,
+      "support": 150.0
     },
     "Tomato - Healthy": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 6.0
+      "precision": 0.9834710743801653,
+      "recall": 0.99581589958159,
+      "f1-score": 0.9896049896049897,
+      "support": 239.0
     },
     "Tomato - Bacterial Spot": {
-      "precision": 0.10416666666666667,
-      "recall": 1.0,
-      "f1-score": 0.18867924528301888,
-      "support": 10.0
+      "precision": 0.950920245398773,
+      "recall": 0.9717868338557993,
+      "f1-score": 0.9612403100775194,
+      "support": 319.0
     },
     "Tomato - Early Blight": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 5.0
+      "precision": 0.6384976525821596,
+      "recall": 0.9066666666666666,
+      "f1-score": 0.7493112947658402,
+      "support": 150.0
     },
     "Tomato - Late Blight": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 9.0
+      "precision": 0.9864864864864865,
+      "recall": 0.7630662020905923,
+      "f1-score": 0.8605108055009824,
+      "support": 287.0
     },
     "Tomato - Leaf Mold": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 4.0
+      "precision": 0.9925373134328358,
+      "recall": 0.9300699300699301,
+      "f1-score": 0.9602888086642599,
+      "support": 143.0
     },
     "Tomato - Septoria Leaf Spot": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 8.0
+      "precision": 0.9435897435897436,
+      "recall": 0.6917293233082706,
+      "f1-score": 0.7982646420824295,
+      "support": 266.0
     },
     "Tomato - Spider Mites": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 8.0
+      "precision": 0.9254901960784314,
+      "recall": 0.9402390438247012,
+      "f1-score": 0.932806324110672,
+      "support": 251.0
     },
     "Tomato - Target Spot": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 7.0
+      "precision": 0.8333333333333334,
+      "recall": 0.9004739336492891,
+      "f1-score": 0.8656036446469249,
+      "support": 211.0
     },
     "Tomato - Yellow Leaf Curl Virus": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 15.0
+      "precision": 0.9913606911447084,
+      "recall": 0.9542619542619543,
+      "f1-score": 0.972457627118644,
+      "support": 481.0
     },
     "Tomato - Mosaic Virus": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
-      "support": 2.0
+      "precision": 0.873015873015873,
+      "recall": 0.9821428571428571,
+      "f1-score": 0.9243697478991597,
+      "support": 56.0
     },
-    "accuracy": 0.10416666666666667,
+    "accuracy": 0.912467700258398,
     "macro avg": {
-      "precision": 0.006944444444444445,
-      "recall": 0.06666666666666667,
-      "f1-score": 0.012578616352201259,
-      "support": 96.0
+      "precision": 0.8803276533519366,
+      "recall": 0.9242754006009193,
+      "f1-score": 0.8906619287922468,
+      "support": 3096.0
     },
     "weighted avg": {
-      "precision": 0.010850694444444446,
-      "recall": 0.10416666666666667,
-      "f1-score": 0.019654088050314465,
-      "support": 96.0
+      "precision": 0.9267296901840373,
+      "recall": 0.912467700258398,
+      "f1-score": 0.9140666919807089,
+      "support": 3096.0
     }
   },
   "checkpoint_path": "models/phase2/resnet18/seed_41/best.pth",
