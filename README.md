@@ -96,9 +96,13 @@ Generated artifacts:
 3. `notebooks/03_finetuning_resnet.ipynb` runs a baseline training flow using `src` modules and `ExperimentLog`.
 4. `04-06` are intentionally deprecated until the optional severity phase is unlocked.
 
-## Colab Note
-`Google Colab/Plant_Disease.ipynb` is context/support only.
-It auto-detects the repository root and imports from `src` from that location.
+## Colab Notebooks
+1. `Google Colab/phase1_colab_live_smoke_artifact.ipynb`:
+   canonical Phase 1 live-Colab smoke evidence notebook.
+2. `Google Colab/phase2_benchmark_runner.ipynb`:
+   canonical Phase 2 orchestration notebook (dry-run + benchmark commands).
+3. `Google Colab/Plant_Disease.ipynb`:
+   legacy context/support notebook retained for history; not canonical workflow.
 
 ## Reproducibility Logging
 Use `src/experiment_log.py` to record:
