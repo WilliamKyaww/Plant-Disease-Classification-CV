@@ -535,7 +535,11 @@ def main():
     args = parse_args()
 
     if args.amp:
-        print("Note: --amp is currently reserved and not yet active in train_model.")
+        device_preview = get_device()
+        if str(device_preview).startswith("cuda"):
+            print("AMP requested: enabled for CUDA training.")
+        else:
+            print("AMP requested, but CUDA is unavailable. Training will run in FP32.")
 
     model_names_raw = _parse_csv_list(args.models)
     seed_values = [int(x) for x in _parse_csv_list(args.seeds)]
