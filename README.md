@@ -33,6 +33,11 @@ Install:
 py -3.13 -m pip install -r requirements.txt
 ```
 
+Runtime support:
+1. CPU and GPU are both supported by training scripts.
+2. GPU (Colab T4 or better) is strongly recommended for Phase 2 full sweeps.
+3. `--amp` is enabled only when CUDA is available; CPU runs use FP32 automatically.
+
 ## Data Setup
 Place PlantVillage folders under:
 `Datasets/<folder_name>/image.jpg`
@@ -104,6 +109,11 @@ Generated artifacts:
 3. `Google Colab/Plant_Disease.ipynb`:
    legacy context/support notebook retained for history; not canonical workflow.
 
+## Phase 2 Cross-Platform Guardrails
+1. Split validation is strict by content and hash, with CSV line-ending normalization support in `src/split_guard.py`.
+2. This prevents false hash mismatches when the same CSV content is produced on Windows (CRLF) vs Linux/Colab (LF).
+3. Non-line-ending content changes still fail validation.
+
 ## Reproducibility Logging
 Use `src/experiment_log.py` to record:
 1. Hyperparameters and seed
@@ -111,3 +121,4 @@ Use `src/experiment_log.py` to record:
 3. Environment metadata
 4. Git commit hash
 5. Split artifact metadata (CSV hashes + class counts + seed)
+6. GPU metadata on CUDA devices (with compatibility handling for PyTorch device property naming).

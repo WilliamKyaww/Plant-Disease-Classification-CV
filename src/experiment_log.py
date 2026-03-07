@@ -147,8 +147,13 @@ class ExperimentLog:
         if torch is not None and torch.cuda.is_available():
             env["cuda_version"] = torch.version.cuda
             env["gpu_name"] = torch.cuda.get_device_name(0)
+            props = torch.cuda.get_device_properties(0)
+            total_memory_bytes = getattr(props, "total_memory", None)
+            if total_memory_bytes is None:
+                # Backward compatibility for older property naming.
+                total_memory_bytes = getattr(props, "total_mem", 0)
             env["gpu_memory_gb"] = round(
-                torch.cuda.get_device_properties(0).total_mem / 1e9, 2
+                total_memory_bytes / 1e9, 2
             )
         else:
             env["cuda_version"] = None

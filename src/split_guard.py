@@ -4,6 +4,7 @@ Frozen split manifest validation utilities for Phase 2 benchmarking.
 
 import json
 import os
+import hashlib
 
 try:
     from src.experiment_log import sha256_file
@@ -18,6 +19,26 @@ def resolve_project_path(path: str, project_root: str = PROJECT_ROOT) -> str:
     if os.path.isabs(path):
         return path
     return os.path.join(project_root, path)
+
+
+def _sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _csv_hash_variants(filepath: str) -> set[str]:
+    """
+    Return hash variants that are equivalent under CSV line-ending normalization.
+    This makes split validation stable across Windows (CRLF) and Linux (LF).
+    """
+    with open(filepath, "rb") as f:
+        raw = f.read()
+    lf = raw.replace(b"\r\n", b"\n")
+    crlf = lf.replace(b"\n", b"\r\n")
+    return {
+        _sha256_bytes(raw),
+        _sha256_bytes(lf),
+        _sha256_bytes(crlf),
+    }
 
 
 def validate_frozen_splits(
@@ -54,10 +75,17 @@ def validate_frozen_splits(
 
         observed_sha = sha256_file(split_abs)
         if observed_sha != expected_sha:
-            raise ValueError(
-                f"Split hash mismatch for '{split_name}'. "
-                f"expected={expected_sha}, observed={observed_sha}"
-            )
+            # Accept line-ending-only differences for CSV files.
+            if split_abs.lower().endswith(".csv") and expected_sha in _csv_hash_variants(split_abs):
+                print(
+                    f"Warning: split '{split_name}' hash differs by line endings only; "
+                    "accepting normalized CSV match."
+                )
+            else:
+                raise ValueError(
+                    f"Split hash mismatch for '{split_name}'. "
+                    f"expected={expected_sha}, observed={observed_sha}"
+                )
         split_paths_abs[split_name] = split_abs
 
     manifest["manifest_path_abs"] = manifest_abs
