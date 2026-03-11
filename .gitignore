@@ -86,3 +86,5 @@ results/experiment_logs/*.json
 .DS_Store
 Thumbs.db
 Markdown Files/
+FYP/
+_tmp_fyp_text/
