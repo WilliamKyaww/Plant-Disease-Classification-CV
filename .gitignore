@@ -7,7 +7,7 @@ Datasets/
 # ============================================================
 # Helper Scripts
 # ============================================================
-helper scripts/*.py
+helper scripts/
 
 # ============================================================
 # Generated CSV files (track frozen split artifacts, ignore the rest)
@@ -87,4 +87,3 @@ results/experiment_logs/*.json
 Thumbs.db
 Markdown Files/
 FYP/
-_tmp_fyp_text/
