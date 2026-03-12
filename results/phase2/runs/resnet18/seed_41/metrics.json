@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-06T21:10:45.321490",
+  "timestamp": "2026-03-11T22:17:28.485870",
   "model": "resnet18",
   "seed": 41,
   "epochs": 1,
@@ -10,26 +10,26 @@
   "patience": 7,
   "class_weighting": "inverse_frequency",
   "class_weights": [
-    0.5389464497566223,
-    0.7991541624069214,
-    5.262354850769043,
-    0.7968708872795105,
-    0.7968708872795105,
-    0.5007267594337463,
-    0.374620258808136,
-    0.7968708872795105,
-    0.4175221621990204,
-    0.8375518918037415,
-    0.44984644651412964,
-    0.47554099559783936,
-    0.5674563646316528,
-    0.24846751987934113,
-    2.1372015476226807
+    0.5389463901519775,
+    0.7991540431976318,
+    5.262354373931885,
+    0.796870768070221,
+    0.796870768070221,
+    0.5007266998291016,
+    0.3746201992034912,
+    0.796870768070221,
+    0.4175221025943756,
+    0.8375517725944519,
+    0.44984638690948486,
+    0.4755409359931946,
+    0.5674563050270081,
+    0.24846749007701874,
+    2.1372013092041016
   ],
   "pretrained": true,
   "amp_requested": false,
   "amp_active": false,
-  "device": "cpu",
+  "device": "cuda",
   "train_samples": 14446,
   "val_samples": 3096,
   "test_samples": 3096,
@@ -48,25 +48,25 @@
     "val": "CSV/plantvillage_val.csv",
     "test": "CSV/plantvillage_test.csv"
   },
-  "test_accuracy": 0.912467700258398,
-  "test_f1_macro": 0.8906619287922468,
-  "elapsed_seconds": 4080.6683138589997,
+  "test_accuracy": 0.9470284237726099,
+  "test_f1_macro": 0.9284341353333467,
+  "elapsed_seconds": 83.894292581,
   "trainable_params": 11184207,
-  "model_size_bytes": 44807435,
+  "model_size_bytes": 44809163,
   "manifest_path": "results/split_manifests/latest_split_manifest.json",
-  "manifest_sha256": "f455a0fc6c9f5bbdabcfcbffcececc2a04ab77c8f09c97deed7d950b848b972b",
+  "manifest_sha256": "8c58e91a5a3214dd4d1918c8aef88cc6934933a2201843eb6adccb8aea3f793c",
   "history": {
     "train_loss": [
-      0.3280437508481667
+      0.31634588445733164
     ],
     "val_loss": [
-      0.221208955428397
+      0.14999753192490695
     ],
     "train_acc": [
-      0.9010798837048318
+      0.9034334763948498
     ],
     "val_acc": [
-      0.915374677002584
+      0.9515503875968992
     ],
     "lr": [
       0.0003
@@ -74,106 +74,106 @@
   },
   "classification_report": {
     "Pepper - Healthy": {
-      "precision": 0.9907407407407407,
-      "recall": 0.9683257918552036,
-      "f1-score": 0.9794050343249427,
+      "precision": 0.9954128440366973,
+      "recall": 0.9819004524886877,
+      "f1-score": 0.9886104783599089,
       "support": 221.0
     },
     "Pepper - Bacterial Spot": {
-      "precision": 0.9266666666666666,
-      "recall": 0.9328859060402684,
-      "f1-score": 0.9297658862876255,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
       "support": 149.0
     },
     "Potato - Healthy": {
-      "precision": 0.45098039215686275,
+      "precision": 0.5227272727272727,
       "recall": 1.0,
-      "f1-score": 0.6216216216216216,
+      "f1-score": 0.6865671641791045,
       "support": 23.0
     },
     "Potato - Early Blight": {
-      "precision": 0.9245283018867925,
-      "recall": 0.98,
-      "f1-score": 0.9514563106796117,
+      "precision": 1.0,
+      "recall": 0.92,
+      "f1-score": 0.9583333333333334,
       "support": 150.0
     },
     "Potato - Late Blight": {
-      "precision": 0.7932960893854749,
-      "recall": 0.9466666666666667,
-      "f1-score": 0.8632218844984803,
+      "precision": 0.8841463414634146,
+      "recall": 0.9666666666666667,
+      "f1-score": 0.9235668789808917,
       "support": 150.0
     },
     "Tomato - Healthy": {
-      "precision": 0.9834710743801653,
-      "recall": 0.99581589958159,
-      "f1-score": 0.9896049896049897,
+      "precision": 1.0,
+      "recall": 0.9916317991631799,
+      "f1-score": 0.9957983193277311,
       "support": 239.0
     },
     "Tomato - Bacterial Spot": {
-      "precision": 0.950920245398773,
-      "recall": 0.9717868338557993,
-      "f1-score": 0.9612403100775194,
+      "precision": 0.966996699669967,
+      "recall": 0.9184952978056427,
+      "f1-score": 0.9421221864951769,
       "support": 319.0
     },
     "Tomato - Early Blight": {
-      "precision": 0.6384976525821596,
-      "recall": 0.9066666666666666,
-      "f1-score": 0.7493112947658402,
+      "precision": 0.7309644670050761,
+      "recall": 0.96,
+      "f1-score": 0.829971181556196,
       "support": 150.0
     },
     "Tomato - Late Blight": {
-      "precision": 0.9864864864864865,
-      "recall": 0.7630662020905923,
-      "f1-score": 0.8605108055009824,
+      "precision": 0.9489795918367347,
+      "recall": 0.9721254355400697,
+      "f1-score": 0.9604130808950087,
       "support": 287.0
     },
     "Tomato - Leaf Mold": {
-      "precision": 0.9925373134328358,
-      "recall": 0.9300699300699301,
-      "f1-score": 0.9602888086642599,
+      "precision": 0.8987341772151899,
+      "recall": 0.993006993006993,
+      "f1-score": 0.9435215946843853,
       "support": 143.0
     },
     "Tomato - Septoria Leaf Spot": {
-      "precision": 0.9435897435897436,
-      "recall": 0.6917293233082706,
-      "f1-score": 0.7982646420824295,
+      "precision": 0.9959183673469387,
+      "recall": 0.9172932330827067,
+      "f1-score": 0.9549902152641878,
       "support": 266.0
     },
     "Tomato - Spider Mites": {
-      "precision": 0.9254901960784314,
-      "recall": 0.9402390438247012,
-      "f1-score": 0.932806324110672,
+      "precision": 0.9186046511627907,
+      "recall": 0.9442231075697212,
+      "f1-score": 0.931237721021611,
       "support": 251.0
     },
     "Tomato - Target Spot": {
-      "precision": 0.8333333333333334,
-      "recall": 0.9004739336492891,
-      "f1-score": 0.8656036446469249,
+      "precision": 0.9818181818181818,
+      "recall": 0.7677725118483413,
+      "f1-score": 0.8617021276595744,
       "support": 211.0
     },
     "Tomato - Yellow Leaf Curl Virus": {
-      "precision": 0.9913606911447084,
-      "recall": 0.9542619542619543,
-      "f1-score": 0.972457627118644,
+      "precision": 1.0,
+      "recall": 0.9688149688149689,
+      "f1-score": 0.9841605068637803,
       "support": 481.0
     },
     "Tomato - Mosaic Virus": {
-      "precision": 0.873015873015873,
-      "recall": 0.9821428571428571,
-      "f1-score": 0.9243697478991597,
+      "precision": 0.9333333333333333,
+      "recall": 1.0,
+      "f1-score": 0.9655172413793104,
       "support": 56.0
     },
-    "accuracy": 0.912467700258398,
+    "accuracy": 0.9470284237726099,
     "macro avg": {
-      "precision": 0.8803276533519366,
-      "recall": 0.9242754006009193,
-      "f1-score": 0.8906619287922468,
+      "precision": 0.9185090618410398,
+      "recall": 0.9534620310657985,
+      "f1-score": 0.9284341353333467,
       "support": 3096.0
     },
     "weighted avg": {
-      "precision": 0.9267296901840373,
-      "recall": 0.912467700258398,
-      "f1-score": 0.9140666919807089,
+      "precision": 0.9552771384545203,
+      "recall": 0.9470284237726099,
+      "f1-score": 0.9483808046297917,
       "support": 3096.0
     }
   },

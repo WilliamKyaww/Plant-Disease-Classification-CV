@@ -35,6 +35,7 @@ models/*.ckpt
 # Jupyter / Python artefacts
 # ===============
 .ipynb_checkpoints/
+* (for context).ipynb
 __pycache__/
 *.pyc
 *.pyo

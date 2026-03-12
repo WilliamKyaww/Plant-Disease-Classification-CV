@@ -1,10 +1,10 @@
 {
-  "name": "phase2_resnet18_seed41",
-  "timestamp": "2026-03-11T22:17:28.487233",
+  "name": "phase2_resnet50_seed42",
+  "timestamp": "2026-03-11T23:45:46.583415",
   "hyperparams": {
-    "model": "resnet18",
-    "seed": 41,
-    "epochs": 1,
+    "model": "resnet50",
+    "seed": 42,
+    "epochs": 30,
     "batch_size": 32,
     "learning_rate": 0.0003,
     "weight_decay": 0.0001,
@@ -29,13 +29,13 @@
       2.1372013092041016
     ],
     "pretrained": true,
-    "amp_requested": false,
-    "amp_active": false
+    "amp_requested": true,
+    "amp_active": true
   },
   "metrics": {
-    "test_accuracy": 0.9470284237726099,
-    "test_f1_macro": 0.9284341353333467,
-    "elapsed_seconds": 83.894292581
+    "test_accuracy": 0.9954780361757106,
+    "test_f1_macro": 0.9945334729704367,
+    "elapsed_seconds": 1656.1608034239998
   },
   "environment": {
     "python_version": "3.12.12 (main, Oct 10 2025, 08:52:57) [GCC 11.4.0]",
@@ -49,7 +49,7 @@
   },
   "artifacts": {
     "split_manifest": {
-      "timestamp": "2026-03-11T22:17:28.491828",
+      "timestamp": "2026-03-11T23:45:46.586282",
       "seed": 42,
       "label_column": "class_label",
       "git_commit": "da734e1d7d9e909118fba2571889d859894da564",
@@ -133,32 +133,32 @@
       "modified_time": "2026-03-11T22:11:21.088115"
     },
     "metrics_file": {
-      "path": "results/phase2/runs/resnet18/seed_41/metrics.json",
+      "path": "results/phase2/runs/resnet50/seed_42/metrics.json",
       "exists": true,
-      "sha256": "d3f2a02ecf72b7fd98973f8c70f418d90dea4e3e257719fa56e35167e88b2b5f",
-      "size_bytes": 5002,
-      "modified_time": "2026-03-11T22:17:28.486485"
+      "sha256": "651117da146140b955c5d512942dd580e3c69f1ba58ec11d934ddc9e2aa4d7b8",
+      "size_bytes": 7474,
+      "modified_time": "2026-03-11T23:45:46.582631"
     },
     "confusion_matrix_json_file": {
-      "path": "results/phase2/runs/resnet18/seed_41/confusion_matrix.json",
+      "path": "results/phase2/runs/resnet50/seed_42/confusion_matrix.json",
       "exists": true,
-      "sha256": "69dcae43935ca2546881fa00727b272f9cb11d550e5d5e380388b5deeffd5cff",
-      "size_bytes": 2752,
-      "modified_time": "2026-03-11T22:17:28.185466"
+      "sha256": "51001c3bb22b3ac8a72166438b138fb9dd6e315b9461f3f1ba0832c64b2fe02c",
+      "size_bytes": 2747,
+      "modified_time": "2026-03-11T23:45:46.322615"
     },
     "confusion_matrix_png_file": {
-      "path": "results/phase2/runs/resnet18/seed_41/confusion_matrix.png",
+      "path": "results/phase2/runs/resnet50/seed_42/confusion_matrix.png",
       "exists": true,
-      "sha256": "de766a57b5fed19508421f94aaaaac26f4e70731f21a89653e8bbe8365537f89",
-      "size_bytes": 32988,
-      "modified_time": "2026-03-11T22:17:28.461483"
+      "sha256": "bf2990f98e5810291cdbdade4b02a8dde4608cd50ab1d397dce697ef763a9851",
+      "size_bytes": 33442,
+      "modified_time": "2026-03-11T23:45:46.555630"
     },
     "model_checkpoint_file": {
-      "path": "models/phase2/resnet18/seed_41/best.pth",
+      "path": "models/phase2/resnet50/seed_42/best.pth",
       "exists": true,
-      "sha256": "3f5d61140921560451c6ad6e8f479164f04931692df2ab533f54e82cac622de5",
-      "size_bytes": 44809163,
-      "modified_time": "2026-03-11T22:17:28.155464"
+      "sha256": "e8622a43fb16dd7c9015e0fec2b61daa1b3e97ec693e53f7eb8c5a2d8af25b25",
+      "size_bytes": 94455021,
+      "modified_time": "2026-03-11T23:45:46.321615"
     }
   },
   "git_commit": "da734e1d7d9e909118fba2571889d859894da564",
