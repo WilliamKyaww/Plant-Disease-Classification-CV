@@ -109,6 +109,31 @@ Generated artifacts:
 3. `Google Colab/Plant_Disease.ipynb`:
    legacy context/support notebook retained for history; not canonical workflow.
 
+### Phase 2 Colab Cell Usage
+Use cell *headers* (comments) as the source of truth, not absolute cell numbers.
+
+First-time clean run (reviewer on fresh environment):
+1. `# Colab setup + repo bootstrap`
+2. `# Canonical repo root`
+3. `# Frozen split guard + dry-run benchmark` (recommended sanity check)
+4. `# Full benchmark run`
+5. `# Rebuild full 12-run Phase 2 summary from metrics.json files` (optional on clean full run)
+6. `# Export Phase 2 artifacts to a zip and download to your laptop.`
+
+Recovery / incremental run (when stale partial artifacts already exist):
+1. `# Colab setup + repo bootstrap`
+2. `# Canonical repo root`
+3. `# Clear stale seed_41 artifacts before full rerun`
+4. `# Full rerun for seed_41 across all 4 models`
+5. `# Full benchmark run`
+6. `# Rebuild full 12-run Phase 2 summary from metrics.json files`
+7. `# Export Phase 2 artifacts to a zip and download to your laptop.`
+
+Why cells 5-7 are conditional:
+1. `# Minimal training smoke (1 model, 1 seed, 1 epoch)` is an early pipeline sanity check only.
+2. `# Clear stale seed_41 artifacts before full rerun` is only needed if old `seed_41` run files exist and would be skipped by `--resume`.
+3. `# Full rerun for seed_41 across all 4 models` is only needed to repair incomplete seed coverage (for example, old 1-epoch seed-41 artifacts).
+
 ## Phase 2 Cross-Platform Guardrails
 1. Split validation is strict by content and hash, with CSV line-ending normalization support in `src/split_guard.py`.
 2. This prevents false hash mismatches when the same CSV content is produced on Windows (CRLF) vs Linux/Colab (LF).
