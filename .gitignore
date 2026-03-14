@@ -5,9 +5,9 @@ Datasets/
 *.zip
 
 # ============================================================
-# Helper Scripts
+# Archived scratch/context files
 # ============================================================
-helper scripts/
+code archives/
 
 # ============================================================
 # Generated CSV files (track frozen split artifacts, ignore the rest)
