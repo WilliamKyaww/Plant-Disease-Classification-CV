@@ -1,6 +1,10 @@
-# Plant Disease Detection
+# Computer Vision Plant Disease Classification
 
 Computer vision project for plant disease classification with reproducible training/evaluation workflows.
+
+## Project Naming Note
+As of 2026-03-14, the project title is standardized as `Computer Vision Plant Disease Classification`.
+This reflects the current primary scope (15-class disease classification), with severity (0-3) kept as a later optional analysis track.
 
 ## Scope (Current)
 1. Primary task: 15-class crop+disease classification (PlantVillage folder-level classes).
