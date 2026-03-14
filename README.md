@@ -138,6 +138,11 @@ Why cells 5-7 are conditional:
 2. `# Clear stale seed_41 artifacts before full rerun` is only needed if old `seed_41` run files exist and would be skipped by `--resume`.
 3. `# Full rerun for seed_41 across all 4 models` is only needed to repair incomplete seed coverage (for example, old 1-epoch seed-41 artifacts).
 
+### Phase 2 Colab Continuation Note
+1. If Colab GPU quota expires, Phase 2 can be resumed from another Colab account/session as long as the same persisted Google Drive project folder is reused.
+2. In that case, the runtime is fresh but the experiment state is not: checkpoints, split manifests, logs, and partial artifacts continue from prior state.
+3. This should be treated as a recovery/continuation run, not a brand-new benchmark run.
+
 ## Phase 2 Cross-Platform Guardrails
 1. Split validation is strict by content and hash, with CSV line-ending normalization support in `src/split_guard.py`.
 2. This prevents false hash mismatches when the same CSV content is produced on Windows (CRLF) vs Linux/Colab (LF).
